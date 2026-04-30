@@ -1,0 +1,8 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#D8B05F"/>
+  <rect x="100" y="120" width="700" height="960" fill="#111111" fill-opacity=".86"/>
+  <rect x="160" y="190" width="580" height="300" fill="#F4E7D1" fill-opacity=".22"/>
+  <rect x="160" y="560" width="250" height="420" fill="#B88945"/>
+  <rect x="456" y="560" width="284" height="420" fill="#F4E7D1" fill-opacity=".82"/>
+  <text x="160" y="1050" fill="#F4E7D1" font-family="Arial, sans-serif" font-size="42" font-weight="700">HALL PREMIUM</text>
+</svg>

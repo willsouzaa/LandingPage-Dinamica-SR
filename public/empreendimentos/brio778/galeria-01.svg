@@ -1,0 +1,9 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#F4E7D1"/>
+  <rect x="92" y="120" width="716" height="420" fill="#111111" fill-opacity=".82"/>
+  <rect x="130" y="164" width="640" height="328" fill="#D8B05F" fill-opacity=".34"/>
+  <rect x="92" y="650" width="716" height="360" fill="#B88945"/>
+  <rect x="142" y="698" width="250" height="120" fill="#111111" fill-opacity=".22"/>
+  <rect x="430" y="698" width="328" height="226" fill="#F4E7D1" fill-opacity=".58"/>
+  <text x="92" y="1090" fill="#111111" font-family="Arial, sans-serif" font-size="42" font-weight="700">AMBIENTE SOCIAL</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#111111"/>
+  <rect y="680" width="900" height="520" fill="#D8B05F"/>
+  <path d="M0 730C138 669 254 688 382 734C552 795 708 789 900 704V902H0V730Z" fill="#F4E7D1" fill-opacity=".55"/>
+  <rect x="108" y="166" width="684" height="420" fill="#B88945"/>
+  <circle cx="450" cy="878" r="154" fill="#F4E7D1" fill-opacity=".54"/>
+  <text x="108" y="1088" fill="#111111" font-family="Arial, sans-serif" font-size="42" font-weight="700">LAZER E PISCINA</text>
+</svg>

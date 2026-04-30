@@ -25,7 +25,7 @@ export function FloatingWhatsApp() {
   return (
     <div className="fixed bottom-6 right-5 z-50">
       {/* Anel de pulso */}
-      <span className="pointer-events-none absolute inset-0 rounded-full bg-[#F26522] opacity-25 animate-ping" />
+      <span className="pointer-events-none absolute inset-0 rounded-full bg-[var(--color-primary)] opacity-25 animate-ping" />
 
       <motion.a
         href="#cadastro"
@@ -34,7 +34,7 @@ export function FloatingWhatsApp() {
         onHoverEnd={() => setExpanded(false)}
         animate={{ width: expanded ? "auto" : "3.5rem" }}
         transition={{ duration: 0.45, ease }}
-        className="relative flex h-14 items-center gap-3 overflow-hidden rounded-full bg-[#F26522] px-4 text-[#003DA5] shadow-[0_8px_32px_rgba(242,101,34,0.4)] ring-1 ring-white/20"
+        className="relative flex h-14 items-center gap-3 overflow-hidden rounded-full bg-[var(--color-primary)] px-4 text-white shadow-[0_8px_32px_rgba(200,155,90,0.4)] ring-1 ring-white/20"
       >
         <WhatsAppIcon />
 

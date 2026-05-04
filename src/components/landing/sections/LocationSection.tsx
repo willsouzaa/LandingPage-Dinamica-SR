@@ -24,14 +24,14 @@ export function LocationSection({ development }: { development: Development }) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.9, ease }}
-          className="relative min-h-[360px] lg:min-h-[640px]"
+          className="relative min-h-[360px] bg-[var(--color-secondary)] lg:min-h-[640px]"
         >
           <Image
             src={location.image}
             alt={`Localização do ${development.name} no ${location.neighborhood}`}
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
+            className="object-contain"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[var(--color-secondary)] opacity-0 lg:opacity-60" />
         </motion.div>

@@ -8,6 +8,7 @@ export const brio778: Development = {
   brand: {
     name: "D.Lohn com Grupo Imperatriz",
     logo: "/empreendimentos/brio778/catalogo/logo-brio.webp",
+    logoContrast: "dark",
   },
   hero: {
     variant: "side-impact",

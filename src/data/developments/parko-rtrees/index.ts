@@ -9,6 +9,7 @@ export const parkoRtrees: Development = {
   brand: {
     name: "RTRĒES",
     logo: "/empreendimentos/parko-rtrees/catalogo/logo-parko.webp",
+    logoContrast: "dark",
   },
 
   hero: {

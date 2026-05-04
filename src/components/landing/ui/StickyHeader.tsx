@@ -7,6 +7,7 @@ import { useState } from "react";
 
 type StickyHeaderProps = {
   logo: string;
+  logoContrast?: "light" | "dark";
   brandName?: string;
   whatsapp?: string;
   whatsappMessage?: string;
@@ -21,6 +22,7 @@ const menuItems = [
 
 export function StickyHeader({
   logo,
+  logoContrast = "light",
   brandName = "Empreendimento",
 }: StickyHeaderProps) {
   const { scrollY } = useScroll();
@@ -49,7 +51,8 @@ export function StickyHeader({
               width={132}
               height={44}
               priority
-              className="h-8 w-auto max-w-[112px] object-contain sm:max-w-[132px]"
+              className="h-8 w-auto max-w-[112px] object-contain sm:max-w-[132px] transition-[filter] duration-300"
+              style={logoContrast === "dark" && !isScrolled ? { filter: "brightness(0) invert(1)" } : undefined}
             />
             <span className="h-8 w-px shrink-0 bg-[var(--color-secondary)]/20" aria-hidden="true" />
             <Image

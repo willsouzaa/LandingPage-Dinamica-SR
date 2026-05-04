@@ -139,7 +139,21 @@ Nomeie os arquivos sem acentos e sem espaços.
 
 ---
 
-### 1.5 Recorte da imagem principal
+### 1.5 Contraste da logo (`logoContrast`)
+
+Analise o logotipo identificado no material e determine se ele é escuro ou claro:
+
+```
+Cor predominante da logo: [descreva]
+logoContrast: "dark"   → logo preta, escura ou com elementos escuros predominantes
+logoContrast: "light"  → logo branca, clara ou com elementos claros predominantes
+```
+
+> O header da landing page é transparente ao abrir a página (fundo escuro do hero atrás). Se a logo for escura (`"dark"`), o sistema inverte automaticamente para branco. Ao rolar, a logo volta às cores originais sobre o fundo claro.
+
+---
+
+### 1.7 Recorte da imagem principal
 
 Avalie se existe uma imagem da fachada adequada para ser recortada e sobreposta ao hero:
 
@@ -152,7 +166,7 @@ Recomendação de uso:
 
 ---
 
-### 1.6 Variante de hero recomendada
+### 1.8 Variante de hero recomendada
 
 Com base no estilo visual e nas imagens disponíveis, escolha a variante:
 
@@ -332,33 +346,35 @@ Exemplos: `PRÉ-LANÇAMENTO NO ESTREITO`, `LANÇAMENTO EXCLUSIVO`, `ÚLTIMAS UNI
 
 ---
 
-### 3.6 Manifesto
+### 3.6 Essência
 
-Crie um texto longo e inspiracional para a seção de manifesto. Este texto aparece em scroll — cada linha ganha destaque conforme o usuário avança na página.
+Crie o conteúdo para a seção de Essência — apresentação conceitual do empreendimento com 4 cards de diferenciais.
 
-Critérios:
-- Tom emocional e poético, coerente com a identidade do empreendimento.
-- Cada parágrafo deve ser uma frase curta, impactante e independente.
-- Transmite o conceito de vida que o empreendimento oferece — não descreve características técnicas.
-- Entre 8 e 14 linhas curtas.
-- Terminar com o nome do empreendimento e um slogan.
-- Usar `\n` como separador entre as linhas no campo TypeScript.
+**Título da seção** (`essencia.title`):
+- Frase que resume a proposta de valor do empreendimento.
+- Tom inspiracional, entre 10 e 16 palavras.
+- Exemplo: "Um refúgio urbano pensado para transformar rotina em experiência."
 
-Referência de tom e estrutura (Brio 778):
+**Texto de apoio** (`essencia.text`):
+- 1 a 2 frases complementando o título com os pilares do projeto.
+- Citar localização, arquitetura ou conceito de vida.
+- Exemplo: "Natureza, saúde e bem-estar se unem em um projeto criado para quem quer viver melhor."
+
+**4 Cards de diferenciais** (`essencia.cards[]`):
+- Exatamente 4 itens curtos, cada um com 2 a 5 palavras.
+- Representam os 4 maiores atributos do empreendimento.
+- Exemplos: "Localização privilegiada", "Projeto contemporâneo", "Conforto e praticidade", "Potencial de valorização".
+
 ```
-É hora de decidir que a vida merece você por inteiro.
-É hora de viver com Brio — aquela força que faz dançar na cozinha enquanto o café passa.
-Que muda o ritmo, o dia, o mês, muda o jeito de morar no agora.
-Brio é para os raros, os apaixonados; é a consciência de quem sabe o próprio valor.
-O brilho que reacende quando as luzes se acalmam.
-É dia terminando e você está exatamente onde merece estar.
-É a convicção que muda tudo.
-Brio é estar presente. Ter coragem.
-O pulso que lembra que viver é mais do que passar pelo tempo.
-É dizer sim para tudo que pode ser vivido. É dizer sim para você.
-
-Brio 778 — Aqui, viver bem é o padrão.
-Um empreendimento D.Lohn.
+sectionLabel:  Essência
+title:         [frase inspiracional — proposta de valor]
+text:          [1 a 2 frases de apoio]
+cards:
+  - [diferencial 1 — 2 a 5 palavras]
+  - [diferencial 2 — 2 a 5 palavras]
+  - [diferencial 3 — 2 a 5 palavras]
+  - [diferencial 4 — 2 a 5 palavras]
+ctaLabel:      Quero receber detalhes
 ```
 
 ---
@@ -409,6 +425,7 @@ export const nomeDoEmpreendimento: Development = {
   brand: {
     name: "",
     logo: "/empreendimentos/[slug]/catalogo/logo.webp",
+    logoContrast: "dark", // "dark" se a logo for preta/escura; "light" se for clara/branca
   },
 
   hero: {
@@ -439,7 +456,18 @@ export const nomeDoEmpreendimento: Development = {
     fontBody: "",
   },
 
-  manifesto: ``,
+  essencia: {
+    sectionLabel: "Essência",
+    title: "",
+    text: "",
+    cards: [
+      "",
+      "",
+      "",
+      "",
+    ],
+    ctaLabel: "Quero receber detalhes",
+  },
 
   location: {
     neighborhood: "",
@@ -539,7 +567,7 @@ Confirme cada item antes de finalizar:
 [ ] 5 subtítulos criados
 [ ] 3 frases de impacto criadas
 [ ] 5 opções de selo circular
-[ ] Manifesto criado (8 a 14 linhas)
+[ ] Essência preenchida (title, text e 4 cards)
 [ ] CTAs definidos
 [ ] SEO title e description dentro do limite de caracteres
 [ ] Template recomendado
@@ -554,11 +582,12 @@ Confirme cada item antes de finalizar:
 Omita estes campos do objeto final se não houver conteúdo real para preenchê-los:
 
 ```
-hero.transitionImages   → omitir se não há imagens de transição disponíveis
-manifesto               → omitir se não há conteúdo emocional suficiente
-spotlight               → omitir se não há diferencial visual único
-technology              → omitir se não há itens de tecnologia/sustentabilidade
-location.mapUrl         → omitir se não for possível identificar o endereço exato
-location.image          → omitir se não houver imagem de localização adequada
-floorPlans[].image      → omitir se não houver imagem da planta disponível
+hero.transitionImages      → omitir se não há imagens de transição disponíveis
+essencia                   → omitir se não houver conteúdo conceitual suficiente
+spotlight                  → omitir se não há diferencial visual único
+technology                 → omitir se não há itens de tecnologia/sustentabilidade
+location.mapUrl            → omitir se não for possível identificar o endereço exato
+location.image             → omitir se não houver imagem de localização adequada
+floorPlans[].image         → omitir se não houver imagem da planta disponível
+brand.logoContrast         → omitir se a logo já for clara/branca (visível sobre fundo escuro)
 ```

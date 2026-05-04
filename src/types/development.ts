@@ -45,6 +45,7 @@ export type Development = {
   brand: {
     name: string;
     logo: string;
+    logoContrast?: "light" | "dark";
   };
   hero: {
     variant?: HeroVariant;

@@ -19,6 +19,7 @@ export function LaunchImpactTemplate({ development }: LaunchImpactTemplateProps)
     <main className="bg-[var(--color-secondary)]">
       <StickyHeader
         logo={development.brand.logo}
+        logoContrast={development.brand.logoContrast}
         brandName={development.brand.name}
         whatsapp={development.cta.whatsapp}
         whatsappMessage={development.cta.message}

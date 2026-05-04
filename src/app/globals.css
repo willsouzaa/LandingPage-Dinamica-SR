@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-title: Inter;
-  --font-body: Inter;
+  --font-title: var(--loaded-inter, Inter);
+  --font-body: var(--loaded-inter, Inter);
 }
 
 * {

@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-body)", "Inter", "system-ui", "sans-serif"],
+        serif: ["var(--font-title)", "Georgia", "serif"],
         display: ["var(--font-title)", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {

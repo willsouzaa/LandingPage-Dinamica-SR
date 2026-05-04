@@ -1,5 +1,16 @@
 import type { DevelopmentTheme } from "@/types/theme";
 
+const FONT_VAR_MAP: Record<string, string> = {
+  "Inter": "var(--loaded-inter, Inter)",
+  "Cormorant Garant": "var(--loaded-cormorant-garant, Georgia, serif)",
+  "Cormorant Garamond": "var(--loaded-cormorant-garant, Georgia, serif)",
+};
+
+function resolveFont(name?: string): string {
+  if (!name) return "var(--loaded-inter, Inter)";
+  return FONT_VAR_MAP[name] ?? name;
+}
+
 export function themeToStyle(theme: DevelopmentTheme) {
   return {
     "--color-primary": theme.primary,
@@ -9,7 +20,7 @@ export function themeToStyle(theme: DevelopmentTheme) {
     "--color-text": theme.text,
     "--color-muted": theme.muted,
     "--color-accent": theme.accent,
-    "--font-title": theme.fontTitle ?? "Inter",
-    "--font-body": theme.fontBody ?? "Inter",
+    "--font-title": resolveFont(theme.fontTitle),
+    "--font-body": resolveFont(theme.fontBody),
   } as React.CSSProperties;
 }

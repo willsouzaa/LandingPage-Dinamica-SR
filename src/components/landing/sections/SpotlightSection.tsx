@@ -93,14 +93,14 @@ export function SpotlightSection({ development }: { development: Development }) 
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.9, ease }}
-          className="relative min-h-[360px] lg:min-h-[640px]"
+          className="relative min-h-[360px] bg-[var(--color-surface)] lg:min-h-[640px]"
         >
           <Image
             src={spotlight.image}
             alt={spotlight.title}
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
+            className="object-contain"
           />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[var(--color-surface)] opacity-0 lg:opacity-40" />
         </motion.div>

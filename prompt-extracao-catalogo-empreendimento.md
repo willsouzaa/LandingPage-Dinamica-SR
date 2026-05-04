@@ -137,6 +137,21 @@ Campos que recebem imagem:
 
 Nomeie os arquivos sem acentos e sem espaços.
 
+> **Como as imagens são renderizadas no projeto:**
+>
+> | Campo | Comportamento | Observação |
+> |---|---|---|
+> | `hero.buildingImage` | `object-contain` — imagem inteira visível | Fachada recortada sem fundo |
+> | `hero.backgroundImage` | `object-cover` — preenche o fundo | Imagem aérea ou panorâmica |
+> | `hero.transitionImages[]` | `object-contain` — imagem inteira visível | Fotos de perspectiva ou ambiente |
+> | `location.image` | `object-contain` — imagem inteira visível | Nunca cortada; escolha imagem de boa qualidade |
+> | `spotlight.image` | `object-contain` — imagem inteira visível | Nunca cortada; imagem do diferencial principal |
+> | `gallery[]` | `object-contain` — imagem inteira visível | Grade de galeria sem corte |
+> | `floorPlans[].image` | `object-contain` — imagem inteira visível | Planta sempre exibida por completo |
+>
+> Campos com `object-contain`: a imagem nunca é cortada, mas espaço vazio ao redor assume a cor de fundo da seção.
+> Campos com `object-cover`: a imagem preenche todo o espaço — prefira imagens panorâmicas ou sem elemento central crítico.
+
 ---
 
 ### 1.5 Contraste da logo (`logoContrast`)

@@ -52,7 +52,7 @@ export function GallerySection({ development }: GallerySectionProps) {
                   onClick={() => open(index)}
                   whileHover={{ scale: 1.015 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className={`group relative block w-full overflow-hidden ${isFirst ? "aspect-[4/5] md:aspect-[16/10]" : "aspect-[4/5]"}`}
+                  className={`group relative block w-full overflow-hidden bg-black/40 ${isFirst ? "aspect-[4/5] md:aspect-[16/10]" : "aspect-[4/5]"}`}
                   aria-label={`Abrir ${image.alt}`}
                 >
                   <Image
@@ -61,7 +61,7 @@ export function GallerySection({ development }: GallerySectionProps) {
                     fill
                     sizes={isFirst ? "(min-width: 768px) 66vw, 90vw" : "(min-width: 768px) 33vw, 90vw"}
                     quality={85}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* overlay com ícone de lupa */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/30">

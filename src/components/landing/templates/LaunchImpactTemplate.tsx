@@ -28,7 +28,6 @@ export function LaunchImpactTemplate({ development }: LaunchImpactTemplateProps)
       <BuildingRevealSection development={development} />
       <LocationSection development={development} />
       <SpotlightSection development={development} />
-      <GallerySection development={development} />
       <TechnologySection development={development} />
       <FinalCtaSection development={development} />
       <Footer />

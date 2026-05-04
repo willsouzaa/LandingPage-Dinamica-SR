@@ -39,9 +39,18 @@ export const exampleDevelopment: Development = {
     fontBody: "Inter",
   },
 
-  manifesto: `Texto longo e inspiracional sobre a identidade e proposta de vida do empreendimento.
-Pode ter múltiplos parágrafos.
-Deve transmitir o conceito central da marca do empreendimento.`,
+  essencia: {
+    sectionLabel: "Essência",
+    title: "Um empreendimento pensado para transformar rotina em experiência.",
+    text: "Localização, arquitetura e conforto se unem em um projeto criado para quem busca viver melhor e investir com inteligência.",
+    cards: [
+      "Localização privilegiada",
+      "Projeto contemporâneo",
+      "Conforto e praticidade",
+      "Potencial de valorização",
+    ],
+    ctaLabel: "Quero receber detalhes",
+  },
 
   location: {
     neighborhood: "Nome do Bairro",

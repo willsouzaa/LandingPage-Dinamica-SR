@@ -35,18 +35,19 @@ export const brio778: Development = {
     fontTitle: "Inter",
     fontBody: "Inter",
   },
-  manifesto: `É hora de decidir que a vida merece você por inteiro.
-É hora de viver com Brio — aquela força que faz dançar na cozinha enquanto o café passa.
-Que muda o ritmo, o dia, o mês, muda o jeito de morar no agora.
-Brio é para os raros, os apaixonados; é a consciência de quem sabe o próprio valor.
-O brilho que reacende quando as luzes se acalmam; é dia terminando e você está exatamente onde merece estar.
-É a convicção que muda tudo.
-Brio é estar presente. Ter coragem.
-O pulso que lembra que viver é mais do que passar pelo tempo.
-É dizer sim para tudo que pode ser vivido. É dizer sim para você.
+  essencia: {
+    sectionLabel: "Essência",
+    title: "Um empreendimento pensado para transformar rotina em experiência.",
+    text: "Localização, arquitetura e conforto se unem em um projeto criado para quem busca viver melhor e investir com inteligência.",
+    cards: [
+      "Localização privilegiada",
+      "Projeto contemporâneo",
+      "Conforto e praticidade",
+      "Potencial de valorização",
+    ],
+    ctaLabel: "Quero receber detalhes",
+  },
 
-Brio 778 — Aqui, viver bem é o padrão.
-Um empreendimento D.Lohn.`,
   location: {
     neighborhood: "Estreito",
     city: "Florianópolis",

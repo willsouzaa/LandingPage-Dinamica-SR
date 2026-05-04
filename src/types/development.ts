@@ -58,7 +58,13 @@ export type Development = {
     transitionImages?: string[];
   };
   theme: DevelopmentTheme;
-  manifesto?: string;
+  essencia?: {
+    sectionLabel?: string;
+    title: string;
+    text: string;
+    cards: string[];
+    ctaLabel?: string;
+  };
   location: {
     neighborhood: string;
     city: string;

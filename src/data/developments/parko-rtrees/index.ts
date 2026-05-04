@@ -39,21 +39,18 @@ export const parkoRtrees: Development = {
     fontBody: "Inter",
   },
 
-  manifesto: `A cidade existe lá fora.
-Aqui dentro, existe outra coisa.
-O cheiro da manhã, a sombra das árvores, o silêncio do bosque.
-Viver perto da natureza não é um luxo — é uma necessidade.
-Saúde não começa na academia. Começa no espaço que você escolheu habitar.
-Comunidade não é uma palavra bonita. É o vizinho que te reconhece no hall.
-O tempo avança. Mas o modo de envelhecer é uma escolha.
-Escolha o bosque. Escolha o rooftop ao entardecer. Escolha a paz de estar em casa.
-Aqui, cada fase da vida tem espaço para ser vivida com intensidade e com cuidado.
-Multigeracional não é uma tipologia. É uma filosofia.
-Parko é o lugar onde o verde é arquitetura.
-Onde saúde, convivência e natureza vivem em perfeita integração.
-Celebre o tempo. Redescubra o futuro do viver.
-
-PARKO R TRĒES — A paz de estar em casa.`,
+  essencia: {
+    sectionLabel: "Essência",
+    title: "Um refúgio urbano pensado para transformar rotina em experiência.",
+    text: "Natureza, saúde e bem-estar se unem em um projeto criado para quem quer viver melhor e envelhecer com qualidade — no coração da Trindade.",
+    cards: [
+      "500 m² de bosque privativo",
+      "Ecossistema de saúde integrado",
+      "Rooftop com piscina e fireplace",
+      "Potencial de valorização na Trindade",
+    ],
+    ctaLabel: "Quero receber detalhes",
+  },
 
   location: {
     neighborhood: "Trindade",

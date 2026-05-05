@@ -53,7 +53,11 @@ export function StickyHeader({
               height={44}
               priority
               className="h-8 w-auto max-w-[112px] object-contain sm:max-w-[132px] transition-[filter] duration-300"
-              style={logoContrast === "dark" && !isScrolled ? { filter: "brightness(0) invert(1)" } : undefined}
+              style={
+                logoContrast === "dark" && !isScrolled ? { filter: "brightness(0) invert(1)" } :
+                logoContrast === "light" && isScrolled  ? { filter: "invert(1)" } :
+                undefined
+              }
             />
             <span className="h-8 w-px shrink-0 bg-[var(--color-secondary)]/20" aria-hidden="true" />
             <Image

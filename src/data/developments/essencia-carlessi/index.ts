@@ -9,7 +9,7 @@ export const essenciaCarlessi: Development = {
   brand: {
     name: "Construtora Carlessi",
     logo: "/empreendimentos/essencia-carlessi/catalogo/logo.webp",
-    logoContrast: "dark",
+    logoContrast: "light",
   },
 
   hero: {

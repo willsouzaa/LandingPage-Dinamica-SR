@@ -52,7 +52,7 @@ Os campos do tipo `status`, `template` e `hero.variant` aceitam **somente** os v
 Siga estas regras em todos os campos do objeto TypeScript gerado:
 
 - **`slug`**: apenas letras minúsculas, números e hífens. Sem acentos, espaços ou caracteres especiais. Exemplos: `brio778`, `reserva-das-flores`, `vista-mar-residence`.
-- **`whatsapp`**: apenas números, formato `55` + DDD + número. Exemplo: `5548999999999`.
+- **`whatsapp`**: sempre usar o número fixo da San Remo Imóveis: **`5548988506977`**. Nunca usar o número do empreendimento ou da construtora.
 - **`cta.message`**: texto da mensagem pré-preenchida no WhatsApp. Deve citar o nome do empreendimento.
 - **Nomes de arquivo de imagem**: apenas letras minúsculas, hífens e extensão `.webp`. Sem acentos, espaços ou caracteres especiais. Exemplos: `fachada-hero.webp`, `localizacao-aerea.webp`.
 - **Todos os caminhos de imagem**: começam com `/empreendimentos/[slug]/catalogo/`.
@@ -419,6 +419,21 @@ Descrição SEO (max 155 caracteres):   [Apresentação do empreendimento com pa
 Template: [valor exato: launch-impact / luxury-residence / beach-lifestyle / urban-modern / investment-value]
 Motivo:
 ```
+
+---
+
+## Fase 3.10 — Fontes suportadas
+
+O sistema carrega fontes via `next/font/google` no `layout.tsx`. **Somente as fontes listadas abaixo estão disponíveis** sem necessidade de alteração no código:
+
+```
+Inter             → uso geral, corpo e títulos
+Cormorant Garant  → títulos elegantes, alto padrão
+```
+
+Se o material indicar outra fonte (Montserrat, Playfair Display, etc.), use `Inter` como substituto no objeto TypeScript e **anote no relatório** qual fonte foi identificada e qual arquivo precisa ser atualizado (`src/app/layout.tsx` e `src/lib/themes.ts`) para que o desenvolvedor faça a adição antes do deploy.
+
+> **Regra**: nunca coloque no campo `fontTitle` ou `fontBody` um nome de fonte que não esteja mapeado em `src/lib/themes.ts` — a fonte simplesmente não carregará.
 
 ---
 

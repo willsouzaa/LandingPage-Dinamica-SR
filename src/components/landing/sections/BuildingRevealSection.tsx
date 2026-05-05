@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "../ui/SafeImage";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, Sparkles } from "lucide-react";
 import { useRef, useState } from "react";
@@ -134,7 +134,7 @@ export function BuildingRevealSection({ development }: BuildingRevealSectionProp
             className="absolute left-1/2 top-16 z-20 h-[520px] w-[82%] -translate-x-1/2 overflow-hidden rounded-[2.75rem] border border-white/15 bg-white/5 shadow-[0_40px_140px_rgba(0,0,0,0.65)] sm:h-[640px] lg:h-[700px]"
           >
             <motion.div style={{ y: heroY, willChange: "transform" }} className="absolute inset-[-10%]">
-              <Image
+              <SafeImage
                 src={development.hero.buildingImage}
                 alt={`Fachada do ${development.name}`}
                 fill
@@ -200,7 +200,7 @@ export function BuildingRevealSection({ development }: BuildingRevealSectionProp
                 style={{ willChange: "transform" }}
                 className={`group absolute z-30 overflow-hidden rounded-[1.6rem] border border-white/15 bg-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl ${positions[index]}`}
               >
-                <Image
+                <SafeImage
                   src={img.src}
                   alt={img.alt}
                   fill

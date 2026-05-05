@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "../ui/SafeImage";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import type { Development } from "@/types/development";
@@ -26,7 +26,7 @@ export function LocationSection({ development }: { development: Development }) {
           transition={{ duration: 0.9, ease }}
           className="relative min-h-[360px] bg-[var(--color-secondary)] lg:min-h-[640px]"
         >
-          <Image
+          <SafeImage
             src={location.image}
             alt={`Localização do ${development.name} no ${location.neighborhood}`}
             fill

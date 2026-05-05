@@ -1,5 +1,6 @@
 import type { DevelopmentTheme } from "@/types/theme";
 
+// Para adicionar nova fonte: 1) importar em layout.tsx com next/font/google + CSS variable, 2) adicionar entrada aqui
 const FONT_VAR_MAP: Record<string, string> = {
   "Inter": "var(--loaded-inter, Inter)",
   "Cormorant Garant": "var(--loaded-cormorant-garant, Georgia, serif)",

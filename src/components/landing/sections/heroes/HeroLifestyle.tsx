@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "../../ui/SafeImage";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import type { Development } from "@/types/development";
@@ -23,7 +23,7 @@ export function HeroLifestyle({ development }: HeroLifestyleProps) {
   return (
     <section id="hero" ref={sectionRef} className="relative isolate min-h-svh overflow-hidden bg-[var(--color-secondary)] text-white">
       <motion.div style={{ scale: imageScale }} className="absolute inset-0 -z-20">
-        <Image
+        <SafeImage
           src={lifestyleImage}
           alt={lifestyleAlt}
           fill

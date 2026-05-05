@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
-import Image from "next/image";
+import { SafeImage } from "./SafeImage";
 import { motion, AnimatePresence } from "framer-motion";
 import type { GalleryImage } from "@/types/development";
 
@@ -56,7 +56,7 @@ export function GalleryLightbox({ images, index, onClose, onPrev, onNext }: Gall
           style={{ aspectRatio: "16/10" }}
           onClick={(e) => e.stopPropagation()}
         >
-          <Image
+          <SafeImage
             src={image.src}
             alt={image.alt}
             fill

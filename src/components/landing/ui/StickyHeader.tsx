@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { SafeImage } from "./SafeImage";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
@@ -45,7 +46,7 @@ export function StickyHeader({
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 text-[var(--color-secondary)] sm:px-6">
           <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-            <Image
+            <SafeImage
               src={logo}
               alt={brandName}
               width={132}

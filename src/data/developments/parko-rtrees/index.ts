@@ -198,7 +198,7 @@ export const parkoRtrees: Development = {
   cta: {
     primaryLabel: "Receber catálogo",
     secondaryLabel: "Falar com consultor",
-    whatsapp: "5548996245294",
+    whatsapp: "5548988506977",
     message: "Olá, tenho interesse no PARKO R TRĒES e quero receber mais informações sobre o lançamento na Trindade.",
   },
 

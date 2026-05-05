@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { SafeImage } from "../ui/SafeImage";
 import { motion } from "framer-motion";
 import type { Development } from "@/types/development";
 import { GalleryLightbox } from "../ui/GalleryLightbox";
@@ -55,7 +55,7 @@ export function GallerySection({ development }: GallerySectionProps) {
                   className={`group relative block w-full overflow-hidden bg-black/40 ${isFirst ? "aspect-[4/5] md:aspect-[16/10]" : "aspect-[4/5]"}`}
                   aria-label={`Abrir ${image.alt}`}
                 >
-                  <Image
+                  <SafeImage
                     src={image.src}
                     alt={image.alt}
                     fill

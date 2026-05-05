@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "../ui/SafeImage";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useMemo, useRef, useState } from "react";
 import type { Development, GalleryImage } from "@/types/development";
@@ -75,7 +75,7 @@ export function AmenitiesSection({ development }: AmenitiesSectionProps) {
                   transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
                   className="absolute inset-0"
                 >
-                  <Image
+                  <SafeImage
                     src={activeSlide.src}
                     alt={activeSlide.alt}
                     fill

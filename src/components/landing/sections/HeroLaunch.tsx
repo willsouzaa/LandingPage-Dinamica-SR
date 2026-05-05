@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+import { SafeImage } from "../ui/SafeImage";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import type { Development } from "@/types/development";
@@ -54,7 +54,7 @@ export function HeroLaunch({ development }: HeroLaunchProps) {
     <section id="hero" ref={sectionRef} className="relative min-h-svh overflow-hidden bg-[var(--color-secondary)]">
       <div className="relative h-[55svh] overflow-hidden bg-[var(--color-background)]">
         {development.hero.backgroundImage ? (
-          <Image
+          <SafeImage
             src={development.hero.backgroundImage}
             alt=""
             fill
@@ -81,7 +81,7 @@ export function HeroLaunch({ development }: HeroLaunchProps) {
         transition={{ delay: 0.5, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-x-0 top-[16svh] z-20 mx-auto h-[64svh] max-w-[min(82vw,720px)]"
       >
-        <Image
+        <SafeImage
           src={development.hero.buildingImage}
           alt={`Fachada do ${development.name}`}
           fill

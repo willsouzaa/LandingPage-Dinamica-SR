@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "./SafeImage";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -89,7 +89,7 @@ export function GalleryModal({ images, isOpen, onClose }: GalleryModalProps) {
                       className="group relative overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
                     >
                       <div className="relative aspect-[4/3] bg-white/5">
-                        <Image
+                        <SafeImage
                           src={img.src}
                           alt={img.alt}
                           fill
@@ -122,7 +122,7 @@ export function GalleryModal({ images, isOpen, onClose }: GalleryModalProps) {
               >
                 {/* Imagem principal */}
                 <div className="relative flex-1">
-                  <Image
+                  <SafeImage
                     src={images[active].src}
                     alt={images[active].alt}
                     fill
@@ -192,7 +192,7 @@ export function GalleryModal({ images, isOpen, onClose }: GalleryModalProps) {
                             : "opacity-50 hover:opacity-80"
                         }`}
                       >
-                        <Image
+                        <SafeImage
                           src={img.src}
                           alt={img.alt}
                           fill

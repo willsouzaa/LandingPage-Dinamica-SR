@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "../ui/SafeImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, MapPin, BedDouble, Ruler, Car, Star, Phone } from "lucide-react";
@@ -66,7 +66,7 @@ export function CatalogoTemplate({ development }: { development: Development }) 
           Voltar
         </Link>
 
-        <Image
+        <SafeImage
           src={development.brand.logo}
           alt={development.brand.name}
           width={120}
@@ -88,7 +88,7 @@ export function CatalogoTemplate({ development }: { development: Development }) 
       {/* ── Hero ── */}
       <div className="relative h-[55vh] min-h-[360px] overflow-hidden bg-[var(--color-secondary)]">
         {development.hero.backgroundImage && (
-          <Image
+          <SafeImage
             src={development.hero.backgroundImage}
             alt={development.name}
             fill
@@ -171,7 +171,7 @@ export function CatalogoTemplate({ development }: { development: Development }) 
                 <Reveal key={img.src} delay={i * 0.06} className="mb-3 break-inside-avoid">
                   <div className="group relative overflow-hidden rounded-xl">
                     <div className="relative aspect-[4/3]">
-                      <Image
+                      <SafeImage
                         src={img.src}
                         alt={img.alt}
                         fill
@@ -194,7 +194,7 @@ export function CatalogoTemplate({ development }: { development: Development }) 
         {/* ── Fachada + apartamento ── */}
         <section className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <Reveal className="relative aspect-[3/4] overflow-hidden rounded-2xl">
-            <Image
+            <SafeImage
               src={development.hero.buildingImage}
               alt={`Fachada do ${development.name}`}
               fill
@@ -229,7 +229,7 @@ export function CatalogoTemplate({ development }: { development: Development }) 
                   <div className="overflow-hidden rounded-xl border border-[var(--color-text)]/10 bg-white shadow-sm">
                     {plan.image && (
                       <div className="relative aspect-[4/3] bg-[var(--color-surface)]">
-                        <Image
+                        <SafeImage
                           src={plan.image}
                           alt={plan.name}
                           fill
@@ -294,7 +294,7 @@ export function CatalogoTemplate({ development }: { development: Development }) 
 
           {development.hero.backgroundImage && (
             <Reveal delay={0.1} className="relative aspect-video overflow-hidden rounded-2xl lg:aspect-[4/3]">
-              <Image
+              <SafeImage
                 src={development.hero.backgroundImage}
                 alt="Localização aérea"
                 fill

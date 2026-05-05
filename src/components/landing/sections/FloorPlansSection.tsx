@@ -1,5 +1,5 @@
 import { BedDouble, Car, Ruler } from "lucide-react";
-import Image from "next/image";
+import { SafeImage } from "../ui/SafeImage";
 import type { Development } from "@/types/development";
 import { Reveal } from "../ui/Reveal";
 import { SectionLabel } from "../ui/SectionLabel";
@@ -26,7 +26,7 @@ export function FloorPlansSection({ development }: FloorPlansSectionProps) {
             >
               {plan.image ? (
                 <div className="relative aspect-[4/3] bg-white">
-                  <Image
+                  <SafeImage
                     src={plan.image}
                     alt={`Planta ${plan.name}`}
                     fill

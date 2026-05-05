@@ -19,11 +19,6 @@ export const brio778: Development = {
     badgeText: "PRÉ-LANÇAMENTO NO ESTREITO",
     buildingImage: "/empreendimentos/brio778/catalogo/fachada-hero.webp",
     backgroundImage: "/empreendimentos/brio778/catalogo/localizacao-aerea.webp",
-    transitionImages: [
-      "/empreendimentos/brio778/catalogo/transição1.png",
-      "/empreendimentos/brio778/catalogo/transição2.png",
-      "/empreendimentos/brio778/catalogo/transição3.png",
-    ],
   },
   theme: {
     primary: "#C89B5A",
@@ -61,7 +56,7 @@ export const brio778: Development = {
       "Comércios, serviços e orla a poucos passos",
       "Bairro com valorização acima da média",
     ],
-    image: "/empreendimentos/brio778/catalogo/boa-localização.png",
+    image: "/empreendimentos/brio778/catalogo/localizacao.png",
   },
   highlights: [
     "570 m² dedicados ao lazer e bem-estar",

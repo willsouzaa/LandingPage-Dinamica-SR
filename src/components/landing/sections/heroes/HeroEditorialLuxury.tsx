@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SafeImage } from "../../ui/SafeImage";
 import { motion } from "framer-motion";
 import type { Development } from "@/types/development";
 
@@ -17,7 +17,7 @@ export function HeroEditorialLuxury({ development }: HeroEditorialLuxuryProps) {
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-x-5 bottom-8 top-24 -z-10 overflow-hidden rounded-2xl sm:inset-x-6 md:left-[32vw]"
       >
-        <Image
+        <SafeImage
           src={development.hero.buildingImage}
           alt={`Imagem do ${development.name}`}
           fill

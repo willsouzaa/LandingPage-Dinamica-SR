@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+import { SafeImage } from "../../ui/SafeImage";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import type { Development } from "@/types/development";
@@ -73,7 +73,7 @@ export function HeroSideImpact({ development }: HeroSideImpactProps) {
           transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
           className="relative min-h-[50svh] overflow-hidden rounded-2xl bg-[var(--color-muted)] md:min-h-[76svh]"
         >
-          <Image
+          <SafeImage
             src={development.hero.buildingImage}
             alt={`Fachada do ${development.name}`}
             fill

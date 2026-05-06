@@ -156,7 +156,7 @@ Todo texto em português brasileiro. Nenhuma palavra em inglês visível.`,
       if (fotoPath) {
         const imageFile = await carregarFoto(fotoPath);
         const response  = await openai.images.edit({
-          model:  "gpt-image-1",
+          model:  "gpt-image-2",
           image:  imageFile,
           prompt,
           size:   post.size,
@@ -164,7 +164,7 @@ Todo texto em português brasileiro. Nenhuma palavra em inglês visível.`,
         b64 = response.data?.[0]?.b64_json ?? "";
       } else {
         const response = await openai.images.generate({
-          model:  "gpt-image-1",
+          model:  "gpt-image-2",
           prompt,
           size:   post.size,
         });

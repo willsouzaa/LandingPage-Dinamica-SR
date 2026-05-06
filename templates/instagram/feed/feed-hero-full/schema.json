@@ -1,0 +1,104 @@
+{
+  "id": "feed-hero-full",
+  "slots": {
+    "nome": {
+      "type": "text",
+      "description": "Nome do empreendimento em caixa alta",
+      "maxLength": 24,
+      "example": "ESSÊNCIA CARLESSI"
+    },
+    "construtora": {
+      "type": "text",
+      "description": "Nome da construtora/incorporadora",
+      "maxLength": 20,
+      "example": "CARLESSI"
+    },
+    "headline": {
+      "type": "text",
+      "description": "Frase principal de impacto (parte normal, cor clara)",
+      "maxLength": 35,
+      "example": "Córrego Grande em sua forma"
+    },
+    "headlineHighlight": {
+      "type": "text",
+      "description": "Palavra de destaque em itálico e cor dourada",
+      "maxLength": 20,
+      "example": "mais completa."
+    },
+    "badge1": {
+      "type": "text",
+      "description": "Badge de status",
+      "maxLength": 20,
+      "example": "PRÉ-LANÇAMENTO"
+    },
+    "localizacao": {
+      "type": "text",
+      "description": "Bairro",
+      "maxLength": 20,
+      "example": "Córrego Grande"
+    },
+    "localizacaoDetalhe": {
+      "type": "text",
+      "description": "Cidade/Estado",
+      "maxLength": 20,
+      "example": "Florianópolis, SC"
+    },
+    "card1Valor": {
+      "type": "text",
+      "description": "Valor do primeiro card de dado",
+      "maxLength": 14,
+      "example": "1, 2 e 3 dorm"
+    },
+    "card1Label": {
+      "type": "text",
+      "description": "Label do primeiro card",
+      "maxLength": 18,
+      "example": "Dormitórios"
+    },
+    "card2Valor": {
+      "type": "text",
+      "description": "Valor do segundo card",
+      "maxLength": 14,
+      "example": "37–160m²"
+    },
+    "card2Label": {
+      "type": "text",
+      "description": "Label do segundo card",
+      "maxLength": 18,
+      "example": "Área Privativa"
+    },
+    "card3Valor": {
+      "type": "text",
+      "description": "Valor do terceiro card",
+      "maxLength": 14,
+      "example": "Lazer completo"
+    },
+    "card3Label": {
+      "type": "text",
+      "description": "Label do terceiro card",
+      "maxLength": 18,
+      "example": "com piscinas"
+    },
+    "cta": {
+      "type": "text",
+      "description": "Texto do botão de call-to-action",
+      "maxLength": 35,
+      "example": "Quero conhecer →"
+    },
+    "imagemPrincipalUrl": {
+      "type": "image",
+      "description": "Foto de fundo (fachada ou perspectiva aérea)",
+      "recommended": "fachada"
+    },
+    "corPrimaria": {
+      "type": "color",
+      "description": "Cor de destaque dourada/terracota para headline e CTA",
+      "example": "#C4A052"
+    },
+    "corFundo": {
+      "type": "color",
+      "description": "Cor de fundo escura (por baixo da foto)",
+      "example": "#0F2520"
+    }
+  }
+}

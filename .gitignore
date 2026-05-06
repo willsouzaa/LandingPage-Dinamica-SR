@@ -5,3 +5,6 @@ build/
 .env
 .env.local
 .DS_Store
+
+# Estrutura de marketing gerada automaticamente
+conteudo-marketing/

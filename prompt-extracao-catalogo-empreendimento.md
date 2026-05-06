@@ -603,7 +603,160 @@ Confirme cada item antes de finalizar:
 [ ] Template recomendado
 [ ] Objeto TypeScript completo e sem campos em branco desnecessários
 [ ] Instrução de registro em index.ts incluída
+[ ] dados.json gerado em src/data/developments/[slug]/dados.json  ← NOVO
+[ ] Comando de marketing executado: npm run marketing [slug]       ← NOVO
 ```
+
+---
+
+## Fase 6 — Estrutura de marketing (OBRIGATÓRIA)
+
+Esta fase é executada **sempre**, logo após salvar o objeto TypeScript.
+Ela alimenta o sistema de geração automática de conteúdo (posts, roteiros, calendário editorial).
+
+### 6.1 Gerar o arquivo dados.json
+
+Salvar em: `src/data/developments/[slug]/dados.json`
+
+Este arquivo é a versão JSON de todos os dados extraídos — lido pelo script de marketing.
+Use exatamente esta estrutura (adapte os valores ao empreendimento):
+
+```json
+{
+  "slug": "[slug]",
+  "nome": "[nome do empreendimento]",
+  "status": "[pre-launch | launch | ready | last-units | investment]",
+  "template": "[template escolhido]",
+  "construtora": "[nome da construtora/incorporadora]",
+  "entrega": "[previsão de entrega ou null]",
+
+  "localizacao": {
+    "bairro":    "[bairro]",
+    "cidade":    "[cidade]",
+    "estado":    "[UF]",
+    "endereco":  "[endereço completo ou null]",
+    "mapa_url":  "[URL do Google Maps ou null]",
+    "destaques": ["[destaque 1]", "[destaque 2]", "..."]
+  },
+
+  "hero": {
+    "variant":        "[side-impact | split-campaign | editorial-luxury | lifestyle]",
+    "backgroundWord": "[palavra gigante]",
+    "titulo":         "[título do hero]",
+    "subtitulo":      "[subtítulo do hero]",
+    "fraseImpacto":   "[frase de impacto ou null]",
+    "seloBadge":      "[texto do selo ou null]"
+  },
+
+  "tema": {
+    "primary":    "[hex]",
+    "secondary":  "[hex]",
+    "background": "[hex]",
+    "surface":    "[hex]",
+    "text":       "[hex]",
+    "muted":      "[hex]",
+    "accent":     "[hex]",
+    "fontTitle":  "[fonte de título]",
+    "fontBody":   "[fonte de corpo]"
+  },
+
+  "logo": {
+    "arquivo":   "[nome do arquivo da logo, ex: logo.webp]",
+    "contraste": "[dark | light]"
+  },
+
+  "essencia": {
+    "titulo": "[título da seção essência]",
+    "texto":  "[texto de apoio]",
+    "cards":  ["[card 1]", "[card 2]", "[card 3]", "[card 4]"]
+  },
+
+  "highlights":         ["[destaque 1]", "..."],
+  "amenities":          ["[área de lazer 1]", "..."],
+  "apartmentFeatures":  ["[acabamento 1]", "..."],
+
+  "tecnologia": {
+    "titulo": "[título da seção tecnologia]",
+    "itens":  ["[item 1]", "..."]
+  },
+
+  "spotlight": {
+    "titulo":    "[título do spotlight]",
+    "descricao": "[descrição]",
+    "itens":     ["[item 1]", "..."]
+  },
+
+  "plantas": [
+    {
+      "nome":    "[nome da tipologia]",
+      "area":    "[m²]",
+      "quartos": "[quantidade]",
+      "suites":  "[quantidade]",
+      "vagas":   "[quantidade]",
+      "imagem":  "[nome do arquivo da planta ou null]"
+    }
+  ],
+
+  "galeria": [
+    {
+      "arquivo":      "[nome do arquivo, ex: bosque.webp]",
+      "descricao":    "[descrição da imagem]",
+      "categoria":    "[Fachada | Lazer | Apartamento | Localização | Rooftop | ...]",
+      "usoSugerido":  "[ex: carrossel, story, reels]"
+    }
+  ],
+
+  "publicoAlvo": {
+    "perfis": ["[perfil 1]", "[perfil 2]"],
+    "motivo": "[justificativa]"
+  },
+
+  "tomComunicacao": {
+    "tom":            "[ex: Sofisticado, Inspiracional, Direto]",
+    "palavrasChave":  ["[palavra 1]", "..."]
+  },
+
+  "cta": {
+    "botaoPrincipal":   "[texto do botão principal]",
+    "botaoSecundario":  "[texto do botão secundário ou null]",
+    "mensagemWhatsapp": "[mensagem pré-preenchida]"
+  },
+
+  "seo": {
+    "titulo":   "[título SEO]",
+    "descricao": "[descrição SEO]"
+  }
+}
+```
+
+> **Campos opcionais:** se não houver dados para `tecnologia`, `spotlight`, `essencia` ou `publicoAlvo`, use `null` em vez de omitir a chave.
+
+---
+
+### 6.2 Executar o script de marketing
+
+Após salvar o `dados.json`, execute:
+
+```bash
+npm run marketing [slug]
+```
+
+Exemplo:
+```bash
+npm run marketing parko-rtrees
+```
+
+Este comando cria automaticamente:
+```
+conteudo-marketing/
+  [slug]/
+    dados/          ← JSONs separados por categoria (info, tipologias, diferenciais, copy, visual, imagens)
+    imagens/        ← imagens copiadas e categorizadas (fachada, lazer, apartamento, plantas, localizacao, logo)
+    marketing/      ← vazio — preenchido pelo Content Agent de geração de conteúdo
+```
+
+> **Importante:** o script lê os arquivos de imagem de `public/empreendimentos/[slug]/catalogo/`.
+> Certifique-se de que as imagens já estão nessa pasta antes de rodar o comando.
 
 ---
 

@@ -1,0 +1,241 @@
+{
+  "slug": "brio778",
+  "nome": "Brio 778",
+  "status": "pre-launch",
+  "template": "launch-impact",
+  "construtora": "D.Lohn com Grupo Imperatriz",
+  "entrega": null,
+
+  "localizacao": {
+    "bairro":    "Estreito",
+    "cidade":    "Florianópolis",
+    "estado":    "SC",
+    "endereco":  "Rua General Eurico Gaspar Dutra, 778",
+    "mapa_url":  null,
+    "destaques": [
+      "Ao lado da Beira-Mar Continental",
+      "Entre a Beira-Mar Continental e a Ponte Hercílio Luz",
+      "Em frente ao Exército, no coração do Estreito",
+      "Comércios, serviços e orla a poucos passos",
+      "Bairro com valorização acima da média"
+    ]
+  },
+
+  "hero": {
+    "variant":        "side-impact",
+    "backgroundWord": "Brio 778",
+    "titulo":         "Brio 778",
+    "subtitulo":      "Aqui, viver bem é o padrão. Pré-lançamento no Estreito, ao lado da Beira-Mar Continental.",
+    "fraseImpacto":   "Um novo endereço para viver o Estreito com Brio.",
+    "seloBadge":      "PRÉ-LANÇAMENTO NO ESTREITO"
+  },
+
+  "tema": {
+    "primary":    "#C89B5A",
+    "secondary":  "#050505",
+    "background": "#D9B36E",
+    "surface":    "#F4E7D1",
+    "text":       "#111111",
+    "muted":      "#76695E",
+    "accent":     "#C89B5A",
+    "fontTitle":  "Inter",
+    "fontBody":   "Inter"
+  },
+
+  "logo": {
+    "arquivo":   "logo-brio.webp",
+    "contraste": "dark"
+  },
+
+  "essencia": {
+    "titulo": "Um empreendimento pensado para transformar rotina em experiência.",
+    "texto":  "Localização, arquitetura e conforto se unem em um projeto criado para quem busca viver melhor e investir com inteligência.",
+    "cards": [
+      "Localização privilegiada",
+      "Projeto contemporâneo",
+      "Conforto e praticidade",
+      "Potencial de valorização"
+    ]
+  },
+
+  "highlights": [
+    "570 m² dedicados ao lazer e bem-estar",
+    "Áreas comuns entregues mobiliadas, decoradas e climatizadas",
+    "Lojas comerciais a um elevador de distância",
+    "Coworking, market, delivery space e bicicletário",
+    "Gerador de energia para os principais acessos"
+  ],
+
+  "amenities": [
+    "Piscina adulto",
+    "Piscina infantil",
+    "Salão de festas",
+    "Espaço gourmet",
+    "Brinquedoteca",
+    "Salão de jogos adulto",
+    "Sauna",
+    "Pet Place",
+    "Academia",
+    "Coworking",
+    "Market",
+    "Lojas comerciais",
+    "Locker para entregas",
+    "Delivery space",
+    "Bicicletário"
+  ],
+
+  "apartmentFeatures": [
+    "Porcelanato 90 x 90 cm nas áreas sociais",
+    "Piso vinílico nos quartos",
+    "Fechadura digital nos apartamentos",
+    "Forro de gesso em todo o apartamento",
+    "Persianas motorizadas nos quartos",
+    "Sacadas com churrasqueira a carvão",
+    "Infraestrutura para ar-condicionado tipo split",
+    "Medidores individuais de água, gás e energia elétrica",
+    "Parede dupla entre apartamentos e manta atenuante acústica"
+  ],
+
+  "tecnologia": {
+    "titulo": "Segurança, tecnologia e sustentabilidade",
+    "itens": [
+      "Gerador de energia para os principais acessos",
+      "Acesso com reconhecimento facial",
+      "Fechadura eletrônica nos apartamentos",
+      "Sistema construtivo com tratamento acústico",
+      "Iluminação LED",
+      "CFTV nos principais acessos",
+      "Reaproveitamento de água da chuva",
+      "Infraestrutura para carro elétrico",
+      "App do condomínio",
+      "Wi-fi nas áreas de lazer"
+    ]
+  },
+
+  "spotlight": {
+    "titulo":    "Mini mercado dentro do seu prédio.",
+    "descricao": "Esqueça as corridas ao supermercado. O Brio 778 tem market, coworking, lojas e espaço para deliveries — tudo acessível sem sair do seu endereço.",
+    "itens": [
+      "Market com produtos do dia a dia",
+      "Coworking para trabalhar perto de casa",
+      "Lojas comerciais no térreo",
+      "Locker para recebimento de entregas",
+      "Delivery space dedicado"
+    ]
+  },
+
+  "plantas": [
+    {
+      "nome":    "Apto Final 01",
+      "area":    "94,10 m²",
+      "quartos": "2",
+      "suites":  "1",
+      "vagas":   "1",
+      "imagem":  "planta-final-01.webp"
+    },
+    {
+      "nome":    "Apto Final 02",
+      "area":    "97,28 m²",
+      "quartos": "2",
+      "suites":  "2",
+      "vagas":   "2",
+      "imagem":  "planta-final-02.webp"
+    },
+    {
+      "nome":    "Apto Final 03",
+      "area":    "122,08 m²",
+      "quartos": "3",
+      "suites":  "3",
+      "vagas":   "2",
+      "imagem":  "planta-final-03.webp"
+    },
+    {
+      "nome":    "Apto Final 08",
+      "area":    "63,74 m²",
+      "quartos": "2",
+      "suites":  "1",
+      "vagas":   "1",
+      "imagem":  "planta-final-08.webp"
+    },
+    {
+      "nome":    "Coberturas",
+      "area":    "178,53 a 235,40 m²",
+      "quartos": "3",
+      "suites":  "2 ou 3",
+      "vagas":   "3",
+      "imagem":  null
+    }
+  ],
+
+  "galeria": [
+    {
+      "arquivo":     "salao-festas.webp",
+      "descricao":   "Salão de festas mobiliado do Brio 778",
+      "categoria":   "Lazer",
+      "usoSugerido": "carrossel, story"
+    },
+    {
+      "arquivo":     "piscina.webp",
+      "descricao":   "Piscina adulto e infantil do Brio 778",
+      "categoria":   "Lazer",
+      "usoSugerido": "carrossel, reels, story"
+    },
+    {
+      "arquivo":     "fitness.webp",
+      "descricao":   "Salão de jogos adulto do Brio 778",
+      "categoria":   "Lazer",
+      "usoSugerido": "carrossel, gallery"
+    },
+    {
+      "arquivo":     "espaco-gourmet.webp",
+      "descricao":   "Espaço gourmet do Brio 778",
+      "categoria":   "Lazer",
+      "usoSugerido": "carrossel, gallery"
+    },
+    {
+      "arquivo":     "fachada-lojas.webp",
+      "descricao":   "Fachada com lojas comerciais do Brio 778",
+      "categoria":   "Fachada",
+      "usoSugerido": "hero, capa de post"
+    },
+    {
+      "arquivo":     "market.webp",
+      "descricao":   "Market do Brio 778",
+      "categoria":   "Lazer",
+      "usoSugerido": "carrossel de diferenciais, story"
+    },
+    {
+      "arquivo":     "fachada-hero.webp",
+      "descricao":   "Fachada principal do Brio 778",
+      "categoria":   "Fachada",
+      "usoSugerido": "hero, capa de post, carrossel"
+    },
+    {
+      "arquivo":     "localizacao-aerea.webp",
+      "descricao":   "Vista aérea — Estreito, Florianópolis",
+      "categoria":   "Localização",
+      "usoSugerido": "story de localização, reels"
+    }
+  ],
+
+  "publicoAlvo": {
+    "perfis": ["Famílias", "Investidores", "Casais jovens", "Profissionais urbanos"],
+    "motivo": "Localização estratégica no Estreito com lazer completo e diferenciais urbanos (market, coworking, delivery space) atrai quem valoriza praticidade e quer investir em bairro em valorização."
+  },
+
+  "tomComunicacao": {
+    "tom":           "Urbano e sofisticado",
+    "palavrasChave": ["Estreito", "Beira-Mar Continental", "praticidade", "valorização", "bem-estar", "moderno", "pré-lançamento"]
+  },
+
+  "cta": {
+    "botaoPrincipal":   "Receber catálogo",
+    "botaoSecundario":  "Falar com consultor",
+    "mensagemWhatsapp": "Olá, tenho interesse no Brio 778 e quero receber o catálogo do pré-lançamento."
+  },
+
+  "seo": {
+    "titulo":    "Brio 778 | Pré-lançamento no Estreito",
+    "descricao": "Conheça o Brio 778, pré-lançamento no Estreito em Florianópolis, ao lado da Beira-Mar Continental."
+  }
+}

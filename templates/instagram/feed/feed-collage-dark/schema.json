@@ -1,0 +1,131 @@
+{
+  "id": "feed-collage-dark",
+  "slots": {
+    "nome": {
+      "type": "text",
+      "description": "Nome do empreendimento em caixa alta",
+      "maxLength": 20,
+      "example": "BRIO 778"
+    },
+    "construtora": {
+      "type": "text",
+      "description": "Nome da construtora/incorporadora",
+      "maxLength": 20,
+      "example": "D.LOHN"
+    },
+    "headline": {
+      "type": "text",
+      "description": "Frase principal de impacto (parte normal, cor escura)",
+      "maxLength": 40,
+      "example": "Mais espaço para a vida"
+    },
+    "headlineHighlight": {
+      "type": "text",
+      "description": "Continuação da headline em itálico e cor primária",
+      "maxLength": 20,
+      "example": "acontecer."
+    },
+    "badge1": {
+      "type": "text",
+      "description": "Badge de status do empreendimento",
+      "maxLength": 20,
+      "example": "PRÉ-LANÇAMENTO"
+    },
+    "badge2": {
+      "type": "text",
+      "description": "Badge de destaque (opcional)",
+      "maxLength": 20,
+      "example": "EXCLUSIVO"
+    },
+    "localizacao": {
+      "type": "text",
+      "description": "Bairro e cidade",
+      "maxLength": 30,
+      "example": "Estreito, Florianópolis"
+    },
+    "colagem1Label": {
+      "type": "text",
+      "description": "Label da primeira foto de colagem",
+      "maxLength": 25,
+      "example": "Área de Lazer Premium"
+    },
+    "colagem2Label": {
+      "type": "text",
+      "description": "Label da segunda foto de colagem",
+      "maxLength": 25,
+      "example": "Espaços Integrados"
+    },
+    "dado1Valor": {
+      "type": "text",
+      "description": "Valor do primeiro dado (ex: metragem)",
+      "maxLength": 12,
+      "example": "62–98m²"
+    },
+    "dado1Label": {
+      "type": "text",
+      "description": "Label do primeiro dado",
+      "maxLength": 15,
+      "example": "Área Privativa"
+    },
+    "dado2Valor": {
+      "type": "text",
+      "description": "Valor do segundo dado (ex: dormitórios)",
+      "maxLength": 12,
+      "example": "2 e 3 dorm."
+    },
+    "dado2Label": {
+      "type": "text",
+      "description": "Label do segundo dado",
+      "maxLength": 15,
+      "example": "Dormitórios"
+    },
+    "dado3Valor": {
+      "type": "text",
+      "description": "Valor do terceiro dado (ex: vagas)",
+      "maxLength": 12,
+      "example": "1–2 vagas"
+    },
+    "dado3Label": {
+      "type": "text",
+      "description": "Label do terceiro dado",
+      "maxLength": 15,
+      "example": "Garagem"
+    },
+    "cta": {
+      "type": "text",
+      "description": "Texto do botão de call-to-action",
+      "maxLength": 40,
+      "example": "Peça valores e disponibilidade →"
+    },
+    "imagemPrincipalUrl": {
+      "type": "image",
+      "description": "Foto da fachada ou vista principal (ocupa zona B direita em arco)",
+      "recommended": "fachada"
+    },
+    "imagemSecundariaUrl": {
+      "type": "image",
+      "description": "Primeira foto de colagem (lazer ou interior)",
+      "recommended": "lazer"
+    },
+    "imagemTerciariaUrl": {
+      "type": "image",
+      "description": "Segunda foto de colagem (interior ou perspectiva)",
+      "recommended": "internas"
+    },
+    "corPrimaria": {
+      "type": "color",
+      "description": "Cor de destaque (badges, CTA, headline highlight)",
+      "example": "#B85C3A"
+    },
+    "corFundo": {
+      "type": "color",
+      "description": "Cor de fundo da zona superior (creme/bege)",
+      "example": "#F5F0E8"
+    },
+    "corRodape": {
+      "type": "color",
+      "description": "Cor de fundo do rodapé escuro",
+      "example": "#1A1A1A"
+    }
+  }
+}

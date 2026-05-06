@@ -6,5 +6,8 @@ build/
 .env.local
 .DS_Store
 
+# TypeScript build cache
+tsconfig.tsbuildinfo
+
 # Estrutura de marketing gerada automaticamente
 conteudo-marketing/

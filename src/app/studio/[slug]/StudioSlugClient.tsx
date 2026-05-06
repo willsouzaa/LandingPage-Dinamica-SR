@@ -9,8 +9,6 @@ type ImageResult = {
   label: string;
   format: string;
   b64: string;
-  pngPath?: string;
-  htmlPath?: string;
 };
 
 type GeneratedContent = {
@@ -71,7 +69,7 @@ export function StudioSlugClient() {
     try {
       const [resR, resI] = await Promise.all([
         fetch(`/api/studio/gerar-roteiro/${slug}`, { method: "POST" }),
-        fetch(`/api/studio/gerar-imagem/${slug}`, { method: "POST" }),
+        fetch(`/api/studio/gerar-imagem/${slug}`,  { method: "POST" }),
       ]);
       if (!resR.ok) throw new Error(await resR.text());
       if (!resI.ok) throw new Error(await resI.text());
@@ -84,46 +82,40 @@ export function StudioSlugClient() {
     }
   }
 
-  async function baixarTudo() {
-    const res = await fetch(`/api/studio/download/${slug}`);
-    if (!res.ok) {
-      setError("Nenhum conteúdo gerado para baixar ainda.");
-      return;
-    }
-    const blob = await res.blob();
-    const url = URL.createObjectURL(blob);
+  function baixarImagem(img: ImageResult) {
     const a = document.createElement("a");
-    a.href = url;
-    a.download = `${slug}-marketing.zip`;
+    a.href = `data:image/png;base64,${img.b64}`;
+    a.download = `${slug}-${img.label.toLowerCase().replace(/\s+/g, "-")}.png`;
+    a.click();
+  }
+
+  function baixarRoteiro() {
+    const blob = new Blob([content.roteiro!], { type: "text/markdown" });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement("a");
+    a.href     = url;
+    a.download = `${slug}-roteiro.md`;
     a.click();
     URL.revokeObjectURL(url);
   }
 
   const isLoading = loading !== null;
-  const hasContent = content.roteiro || content.imagens.length > 0;
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <Link href="/studio" className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors mb-2 inline-block">
-            ← Empreendimentos
-          </Link>
-          <h1 className="text-xl font-semibold text-white">{dev.name}</h1>
-          <p className="text-zinc-400 text-sm mt-0.5">
-            {dev.location.neighborhood}, {dev.location.city} · {dev.status}
-          </p>
-        </div>
-        {hasContent && (
-          <button
-            onClick={baixarTudo}
-            className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors"
-          >
-            ⬇ Baixar tudo (.zip)
-          </button>
-        )}
+
+      {/* Cabeçalho */}
+      <div>
+        <Link href="/studio" className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors mb-2 inline-block">
+          ← Empreendimentos
+        </Link>
+        <h1 className="text-xl font-semibold text-white">{dev.name}</h1>
+        <p className="text-zinc-400 text-sm mt-0.5">
+          {dev.location.neighborhood}, {dev.location.city} · {dev.status}
+        </p>
       </div>
 
+      {/* Botões de ação */}
       <div className="flex flex-wrap gap-3">
         <button
           onClick={gerarRoteiro}
@@ -137,7 +129,7 @@ export function StudioSlugClient() {
           disabled={isLoading}
           className="bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors"
         >
-          {loading === "imagens" ? "Gerando imagens…" : "🖼 Gerar Imagens"}
+          {loading === "imagens" ? "Gerando imagem…" : "🖼 Gerar Imagem"}
         </button>
         <button
           onClick={gerarTudo}
@@ -148,40 +140,35 @@ export function StudioSlugClient() {
         </button>
       </div>
 
+      {/* Loading */}
       {isLoading && (
         <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 text-center">
           <div className="inline-block w-5 h-5 border-2 border-zinc-600 border-t-white rounded-full animate-spin mb-3" />
           <p className="text-zinc-400 text-sm">
-            {loading === "roteiro" && "Gerando roteiro com Claude…"}
-            {loading === "imagens" && "Renderizando post HTML/CSS em PNG…"}
-            {loading === "tudo" && "Gerando roteiro e renderizando post em paralelo…"}
+            {loading === "roteiro" && "Gerando roteiro com GPT-4o…"}
+            {loading === "imagens" && "Gerando imagem com gpt-image-2…"}
+            {loading === "tudo"    && "Gerando roteiro e imagem em paralelo…"}
           </p>
         </div>
       )}
 
+      {/* Erro */}
       {error && (
         <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-red-400 text-sm">
           {error}
         </div>
       )}
 
+      {/* Roteiro */}
       {content.roteiro && (
         <section className="space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-white font-medium">Roteiro gerado</h2>
             <button
-              onClick={() => {
-                const blob = new Blob([content.roteiro!], { type: "text/markdown" });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = `${slug}-roteiro.md`;
-                a.click();
-                URL.revokeObjectURL(url);
-              }}
-              className="text-xs text-zinc-400 hover:text-white transition-colors"
+              onClick={baixarRoteiro}
+              className="text-xs text-zinc-400 hover:text-white border border-zinc-700 hover:border-zinc-500 px-3 py-1.5 rounded-lg transition-colors"
             >
-              ⬇ baixar .md
+              ⬇ Baixar .md
             </button>
           </div>
           <pre className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 text-zinc-300 text-sm whitespace-pre-wrap leading-relaxed overflow-auto max-h-[500px]">
@@ -190,40 +177,44 @@ export function StudioSlugClient() {
         </section>
       )}
 
+      {/* Imagens */}
       {content.imagens.length > 0 && (
-        <section className="space-y-3">
+        <section className="space-y-4">
           <h2 className="text-white font-medium">Imagens geradas</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.imagens.map((img, i) => (
               <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden">
-                <img
-                  src={`data:image/png;base64,${img.b64}`}
-                  alt={img.label}
-                  className="w-full object-cover"
-                />
-                <div className="p-3 flex items-center justify-between">
-                  <div>
-                    <p className="text-white text-xs font-medium">{img.label}</p>
-                    <p className="text-zinc-500 text-xs">{img.format}</p>
+                {img.b64 ? (
+                  <img
+                    src={`data:image/png;base64,${img.b64}`}
+                    alt={img.label}
+                    className="w-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full aspect-[4/5] flex items-center justify-center text-zinc-600 text-sm">
+                    Imagem não gerada
                   </div>
-                  <button
-                    onClick={() => {
-                      const a = document.createElement("a");
-                      a.href = `data:image/png;base64,${img.b64}`;
-                      a.download = `${slug}-${img.label.toLowerCase().replace(/\s+/g, "-")}.png`;
-                      a.click();
-                    }}
-                    className="text-zinc-400 hover:text-white text-xs transition-colors"
-                  >
-                    ⬇
-                  </button>
+                )}
+                <div className="p-4 flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-white text-sm font-medium">{img.label}</p>
+                    <p className="text-zinc-500 text-xs mt-0.5">{img.format}</p>
+                  </div>
+                  {img.b64 && (
+                    <button
+                      onClick={() => baixarImagem(img)}
+                      className="flex items-center gap-1.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white text-xs font-medium px-3 py-2 rounded-lg transition-colors whitespace-nowrap"
+                    >
+                      ⬇ Baixar PNG
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </section>
       )}
+
     </div>
   );
 }
-

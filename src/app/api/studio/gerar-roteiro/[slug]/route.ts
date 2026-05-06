@@ -19,7 +19,7 @@ export async function POST(
 
   const dados = JSON.parse(fs.readFileSync(dadosPath, "utf-8"));
 
-  const promptBasePath = path.join(process.cwd(), "prompt-gerar-roteiro.md");
+  const promptBasePath = path.join(process.cwd(), "prompts", "gerar-roteiro.md");
   const promptBase = fs.existsSync(promptBasePath)
     ? fs.readFileSync(promptBasePath, "utf-8")
     : "";

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+import OpenAI, { toFile } from "openai";
 import fs from "fs";
 import path from "path";
 
@@ -11,7 +11,7 @@ export async function POST(
 
   const dadosPath    = path.join(process.cwd(), "src", "data", "developments", slug, "dados.json");
   const imagensPath  = path.join(process.cwd(), "conteudo-marketing", slug, "dados", "imagens.json");
-  const promptMdPath = path.join(process.cwd(), "prompt-gerar-imagem.md");
+  const promptMdPath = path.join(process.cwd(), "prompts", "gerar-imagem.md");
 
   if (!fs.existsSync(dadosPath)) {
     return NextResponse.json({ error: `dados.json não encontrado para "${slug}".` }, { status: 404 });
@@ -43,11 +43,11 @@ export async function POST(
     return fs.existsSync(fullPath) ? fullPath : null;
   }
 
-  function getMime(filePath: string): string {
-    const ext = path.extname(filePath).toLowerCase().replace(".", "");
-    if (ext === "webp") return "image/webp";
-    if (ext === "png")  return "image/png";
-    return "image/jpeg";
+  async function carregarFoto(filePath: string) {
+    const buffer = fs.readFileSync(filePath);
+    const ext    = path.extname(filePath).toLowerCase().replace(".", "");
+    const mime   = ext === "webp" ? "image/webp" : ext === "png" ? "image/png" : "image/jpeg";
+    return toFile(buffer, path.basename(filePath), { type: mime });
   }
 
   function montarPrompt(instrucaoPost: string): string {
@@ -68,51 +68,14 @@ ${JSON.stringify(d, null, 2)}
 ${instrucaoPost}`;
   }
 
-  // Com foto real: Responses API (gpt-image-2 via image_generation tool)
-  async function gerarComFoto(fotoPath: string, prompt: string, size: string): Promise<string> {
-    const base64 = fs.readFileSync(fotoPath).toString("base64");
-    const mime   = getMime(fotoPath);
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const resp = await (openai as any).responses.create({
-      model: "gpt-5.5",
-      input: [
-        {
-          role: "user",
-          content: [
-            { type: "input_image", image_url: `data:${mime};base64,${base64}` },
-            { type: "input_text",  text: prompt },
-          ],
-        },
-      ],
-      tools: [{ type: "image_generation", action: "edit", size }],
-    });
-
-    return (resp.output as Array<{ type: string; result?: string }>)
-      .find(o => o.type === "image_generation_call")
-      ?.result ?? "";
-  }
-
-  // Sem foto: Images API direta
-  async function gerarSemFoto(prompt: string, size: string): Promise<string> {
-    const result = await openai.images.generate({
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      model: "gpt-image-2-2026-04-21" as any,
-      prompt,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      size: size as any,
-    });
-    return result.data?.[0]?.b64_json ?? "";
-  }
-
   // ─── Dados do empreendimento ──────────────────────────────────────────────
 
-  const nome   = d.nome as string;
-  const bairro = d.localizacao.bairro as string;
-  const cidade = d.localizacao.cidade as string;
-  const status = d.status === "pre-launch" ? "PRÉ-LANÇAMENTO" : "LANÇAMENTO";
-  const frase  = (d.hero.fraseImpacto ?? d.hero.subtitulo) as string;
-  const cta    = d.cta.botaoPrincipal as string;
+  const nome    = d.nome as string;
+  const bairro  = d.localizacao.bairro as string;
+  const cidade  = d.localizacao.cidade as string;
+  const status  = d.status === "pre-launch" ? "PRÉ-LANÇAMENTO" : "LANÇAMENTO";
+  const frase   = (d.hero.fraseImpacto ?? d.hero.subtitulo) as string;
+  const cta     = d.cta.botaoPrincipal as string;
   const primary = d.tema.primary as string;
 
   // ─── Posts ────────────────────────────────────────────────────────────────
@@ -120,7 +83,7 @@ ${instrucaoPost}`;
   type PostConfig = {
     label:         string;
     format:        string;
-    size:          string;
+    size:          "1024x1024" | "1024x1536" | "1536x1024";
     fotoCategoria: string;
     fotoIndex:     number;
     instrucao:     string;
@@ -180,7 +143,7 @@ Todo texto em português brasileiro. Nenhuma palavra em inglês visível.`,
     // },
   ];
 
-  // ─── Geração sem salvar em disco ─────────────────────────────────────────
+  // ─── Geração com images.edit() + foto real, sem salvar em disco ───────────
 
   const results = await Promise.all(
     posts.map(async (post) => {
@@ -188,10 +151,25 @@ Todo texto em português brasileiro. Nenhuma palavra em inglês visível.`,
         ?? resolverImagem("fachada", 0);
 
       const prompt = montarPrompt(post.instrucao);
+      let b64 = "";
 
-      const b64 = fotoPath
-        ? await gerarComFoto(fotoPath, prompt, post.size)
-        : await gerarSemFoto(prompt, post.size);
+      if (fotoPath) {
+        const imageFile = await carregarFoto(fotoPath);
+        const response  = await openai.images.edit({
+          model:  "gpt-image-1",
+          image:  imageFile,
+          prompt,
+          size:   post.size,
+        });
+        b64 = response.data?.[0]?.b64_json ?? "";
+      } else {
+        const response = await openai.images.generate({
+          model:  "gpt-image-1",
+          prompt,
+          size:   post.size,
+        });
+        b64 = response.data?.[0]?.b64_json ?? "";
+      }
 
       return { label: post.label, format: post.format, b64 };
     })

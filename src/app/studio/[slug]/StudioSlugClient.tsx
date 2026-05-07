@@ -8,7 +8,8 @@ import { developments } from "@/data/developments";
 type ImageResult = {
   label: string;
   format: string;
-  b64: string;
+  b64: string | null;
+  error?: string;
 };
 
 type GeneratedContent = {
@@ -191,8 +192,11 @@ export function StudioSlugClient() {
                     className="w-full object-cover"
                   />
                 ) : (
-                  <div className="w-full aspect-[4/5] flex items-center justify-center text-zinc-600 text-sm">
-                    Imagem não gerada
+                  <div className="w-full aspect-[4/5] flex flex-col items-center justify-center gap-2 px-4 text-center text-zinc-600 text-sm">
+                    <span>Imagem não gerada</span>
+                    {img.error && (
+                      <span className="text-red-400 text-xs break-all">{img.error}</span>
+                    )}
                   </div>
                 )}
                 <div className="p-4 flex items-center justify-between gap-3">

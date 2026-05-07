@@ -3,18 +3,23 @@ import OpenAI, { toFile } from "openai";
 import fs from "fs";
 import path from "path";
 
+// "low" = mais barato e rápido | "medium" = equilíbrio | "high" = máxima qualidade
+const IMAGE_QUALITY = "medium" as const;
+
 export async function POST(
   _req: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
 
-  const dadosPath    = path.join(process.cwd(), "src", "data", "developments", slug, "dados.json");
-  const imagensPath  = path.join(process.cwd(), "conteudo-marketing", slug, "dados", "imagens.json");
-  const promptMdPath = path.join(process.cwd(), "prompts", "gerar-imagem.md");
+  const dadosPath   = path.join(process.cwd(), "src", "data", "developments", slug, "dados.json");
+  const imagensPath = path.join(process.cwd(), "conteudo-marketing", slug, "dados", "imagens.json");
 
   if (!fs.existsSync(dadosPath)) {
-    return NextResponse.json({ error: `dados.json não encontrado para "${slug}".` }, { status: 404 });
+    return NextResponse.json(
+      { error: `dados.json não encontrado para "${slug}".` },
+      { status: 404 }
+    );
   }
   if (!fs.existsSync(imagensPath)) {
     return NextResponse.json(
@@ -26,10 +31,6 @@ export async function POST(
   const d       = JSON.parse(fs.readFileSync(dadosPath,   "utf-8"));
   const indice  = JSON.parse(fs.readFileSync(imagensPath, "utf-8"));
   const imgBase = path.join(process.cwd(), "conteudo-marketing", slug);
-
-  const promptBase = fs.existsSync(promptMdPath)
-    ? fs.readFileSync(promptMdPath, "utf-8")
-    : "";
 
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -51,26 +52,12 @@ export async function POST(
   }
 
   function montarPrompt(instrucaoPost: string): string {
-    return `${promptBase}
-
----
-
-## DADOS DO EMPREENDIMENTO
-
-\`\`\`json
-${JSON.stringify(d, null, 2)}
-\`\`\`
-
----
-
-## INSTRUÇÃO ESPECÍFICA DESTE POST
-
-${instrucaoPost}`;
+    return instrucaoPost;
   }
 
   // ─── Dados do empreendimento ──────────────────────────────────────────────
 
-  const nome    = d.nome as string;
+  const nome    = d.nome    as string;
   const bairro  = d.localizacao.bairro as string;
   const cidade  = d.localizacao.cidade as string;
   const status  = d.status === "pre-launch" ? "PRÉ-LANÇAMENTO" : "LANÇAMENTO";
@@ -78,7 +65,7 @@ ${instrucaoPost}`;
   const cta     = d.cta.botaoPrincipal as string;
   const primary = d.tema.primary as string;
 
-  // ─── Posts ────────────────────────────────────────────────────────────────
+  // ─── Configuração dos posts ────────────────────────────────────────────────
 
   type PostConfig = {
     label:         string;
@@ -90,9 +77,8 @@ ${instrucaoPost}`;
   };
 
   const posts: PostConfig[] = [
-    // ── ATIVO: 1 post para testes ──────────────────────────────────────────
     {
-      label:         "Post Feed",
+      label:         "Feed",
       format:        "Instagram Feed 4:5",
       size:          "1024x1536",
       fotoCategoria: "fachada",
@@ -108,42 +94,26 @@ Use EXATAMENTE a foto enviada como imagem principal — não substitua o edifíc
 - Cor de destaque: ${primary}
 Todo texto em português brasileiro. Nenhuma palavra em inglês visível.`,
     },
-
-    // ── DESATIVADO: descomentar quando testes aprovados ────────────────────
+    // Story e Carrossel desativados — descomentar quando Feed estiver aprovado
     // {
     //   label:         "Story",
     //   format:        "Instagram Story 9:16",
     //   size:          "1024x1536",
     //   fotoCategoria: "lazer",
     //   fotoIndex:     0,
-    //   instrucao:
-    //     `Gere um Story Instagram 9:16 para imóvel de luxo.
-    // Use EXATAMENTE esta foto de área de lazer como fundo — preserve o espaço real.
-    // - Nome: "${nome}"
-    // - Headline: "${(d.highlights?.[0] ?? "")}"
-    // - Status: "${status} · ${bairro}, ${cidade}"
-    // - CTA: "${cta} →"
-    // - Cor de destaque: ${primary}
-    // Todo texto em português brasileiro.`,
+    //   instrucao: `...`,
     // },
     // {
     //   label:         "Carrossel",
     //   format:        "Instagram Square 1:1",
     //   size:          "1024x1024",
     //   fotoCategoria: "lazer",
-    //   fotoIndex:     2,
-    //   instrucao:
-    //     `Gere um slide de carrossel Instagram 1:1 para imóvel de luxo.
-    // Use EXATAMENTE esta foto como destaque — preserve o espaço real.
-    // - Nome: "${nome}"
-    // - Amenidades: ${(d.amenities ?? []).slice(0, 4).join(", ")}
-    // - Indicador de slide: "2 / 5 →"
-    // - Cor de destaque: ${primary}
-    // Todo texto em português brasileiro.`,
+    //   fotoIndex:     1,
+    //   instrucao: `...`,
     // },
   ];
 
-  // ─── Geração com images.edit() + foto real, sem salvar em disco ───────────
+  // ─── Geração com gpt-image-1 ───────────────────────────────────────────────
 
   const results = await Promise.all(
     posts.map(async (post) => {
@@ -153,22 +123,36 @@ Todo texto em português brasileiro. Nenhuma palavra em inglês visível.`,
       const prompt = montarPrompt(post.instrucao);
       let b64 = "";
 
-      if (fotoPath) {
-        const imageFile = await carregarFoto(fotoPath);
-        const response  = await openai.images.edit({
-          model:  "gpt-image-2",
-          image:  imageFile,
-          prompt,
-          size:   post.size,
-        });
-        b64 = response.data?.[0]?.b64_json ?? "";
-      } else {
-        const response = await openai.images.generate({
-          model:  "gpt-image-2",
-          prompt,
-          size:   post.size,
-        });
-        b64 = response.data?.[0]?.b64_json ?? "";
+      console.log(`[gerar-imagem] ${post.label} | foto: ${fotoPath ?? "nenhuma"}`);
+
+      try {
+        if (fotoPath) {
+          const imageFile = await carregarFoto(fotoPath);
+          const response  = await openai.images.edit({
+            model:   "gpt-image-1",
+            image:   imageFile,
+            prompt,
+            size:    post.size,
+            quality: IMAGE_QUALITY,
+            n:       1,
+          });
+          b64 = response.data?.[0]?.b64_json ?? "";
+        } else {
+          const response = await openai.images.generate({
+            model:   "gpt-image-1",
+            prompt,
+            size:    post.size,
+            quality: IMAGE_QUALITY,
+            n:       1,
+          });
+          b64 = response.data?.[0]?.b64_json ?? "";
+        }
+
+        console.log(`[gerar-imagem] ${post.label} | b64 length: ${b64.length}`);
+      } catch (err: unknown) {
+        const message = (err as { message?: string }).message ?? "Erro desconhecido";
+        console.error(`[gerar-imagem] ${post.label} | ERRO:`, message);
+        return { label: post.label, format: post.format, b64: null, error: message };
       }
 
       return { label: post.label, format: post.format, b64 };

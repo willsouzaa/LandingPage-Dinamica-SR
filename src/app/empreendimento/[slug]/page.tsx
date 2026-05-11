@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDevelopmentBySlug, getDevelopmentSlugs } from "@/data/developments";
-import { getPublishedDevelopment } from "@/lib/landing-drafts";
+import { getPublishedDevelopment, listPublishedDevelopments } from "@/lib/landing-drafts";
 import { themeToStyle } from "@/lib/themes";
 import { LandingTemplateRenderer } from "@/components/landing/templates";
 
@@ -12,7 +12,11 @@ type DevelopmentPageProps = {
 };
 
 export function generateStaticParams() {
-  return getDevelopmentSlugs().map((slug) => ({ slug }));
+  const staticSlugs = getDevelopmentSlugs();
+  const publishedSlugs = listPublishedDevelopments().map((development) => development.slug);
+  const slugs = Array.from(new Set([...staticSlugs, ...publishedSlugs]));
+
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

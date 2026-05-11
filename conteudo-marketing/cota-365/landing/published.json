@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "source": "ai",
+  "createdAt": "2026-05-11T18:00:00-03:00",
+  "updatedAt": "2026-05-11T17:30:34.707Z",
+  "strategy": {
+    "commercialAngle": "Pré-lançamento smart na Região Continental de Florianópolis, com studios, apartamentos de 2 dormitórios, 4 lojas comerciais e 1.500m² de lazer/serviços para morar ou investir.",
+    "mainPromise": "Um empreendimento pensado para funcionar 365 dias por ano, unindo moradia, conveniência, trabalho, saúde e lazer em um endereço estratégico.",
+    "targetAudience": [
+      "investidores interessados em studios compactos e unidades com liquidez",
+      "moradores que valorizam conveniência condominial e localização continental",
+      "compradores que buscam 2 dormitórios com infraestrutura completa",
+      "clientes que querem pré-lançamento com timing de mercado e diferenciais técnicos"
+    ],
+    "templateReason": "O template investment-value conversa com o mix de studios, unidades de 2 dormitórios, lojas comerciais, localização estratégica e argumento de uso/investimento.",
+    "sectionReason": "A landing abre com promessa smart e localização, aprofunda o ecossistema 365 em seção customizada, mostra rooftop e imagens reais do book, apresenta plantas e fecha com tecnologia e captação.",
+    "customSectionsReason": "Foi criada a seção custom:cota-365-smart-ecosystem porque o conceito Smart 365 é o eixo comercial do PDF e comunica melhor trabalho, saúde, rotina e lazer do que a seção padrão de amenities.",
+    "missingInformation": [
+      "bairro oficial não identificado no PDF; o material posiciona o empreendimento como Região Continental",
+      "preços e condições comerciais",
+      "prazo de entrega",
+      "registro de incorporação ainda não informado no material provisório",
+      "nome da construtora/incorporadora não identificado no PDF"
+    ]
+  },
+  "validation": {
+    "ok": true,
+    "issues": [],
+    "warnings": [
+      "sections[4] usa seção customizada (custom:cota-365-smart-ecosystem). Confirme se ela foi registrada em src/components/landing/generated/registry.tsx.",
+      "sections[10] usa seção customizada (custom:lead-capture-modal). Confirme se ela foi registrada em src/components/landing/generated/registry.tsx."
+    ]
+  },
+  "development": {
+    "slug": "cota-365",
+    "template": "investment-value",
+    "sections": [
+      "hero",
+      "essencia",
+      "building",
+      "location",
+      "custom:cota-365-smart-ecosystem",
+      "spotlight",
+      "gallery",
+      "floorPlans",
+      "technology",
+      "leadForm",
+      "custom:lead-capture-modal",
+      "footer"
+    ],
+    "name": "Cota 365",
+    "status": "pre-launch",
+    "brand": {
+      "name": "Cota 365",
+      "logo": "/empreendimentos/cota-365/catalogo/logo.webp",
+      "logoContrast": "light"
+    },
+    "hero": {
+      "variant": "side-impact",
+      "backgroundWord": "COTA",
+      "title": "Smart para viver. Estratégico para investir.",
+      "subtitle": "Pré-lançamento na Rua Afonso Pena, com studios, apartamentos de 2 dormitórios, lojas comerciais e uma estrutura de lazer e conveniência pensada para funcionar 365 dias por ano.",
+      "impactPhrase": "Um empreendimento smart de verdade.",
+      "badgeText": "Pré-lançamento Cota 365",
+      "buildingImage": "/empreendimentos/cota-365/catalogo/fachada-hero.webp",
+      "backgroundImage": "/empreendimentos/cota-365/catalogo/capa-hero.webp",
+      "transitionImages": [
+        "/empreendimentos/cota-365/catalogo/localizacao-aerea.webp",
+        "/empreendimentos/cota-365/catalogo/lobby-cafe.webp",
+        "/empreendimentos/cota-365/catalogo/piscina-rooftop.webp"
+      ]
+    },
+    "theme": {
+      "primary": "#ff7a1a",
+      "secondary": "#252525",
+      "background": "#f3f2ef",
+      "surface": "#ffffff",
+      "text": "#222222",
+      "muted": "#66645f",
+      "accent": "#2f5b45",
+      "fontTitle": "Inter",
+      "fontBody": "Inter"
+    },
+    "essencia": {
+      "sectionLabel": "Conceito Smart",
+      "title": "Decisões inteligentes desde o projeto.",
+      "text": "O Cota 365 foi pensado para unir timing de mercado, soluções arquitetônicas inovadoras e uma rotina mais prática. Um produto bom para viver, fácil de entender e forte para investir.",
+      "cards": [
+        "Smart = decisões inteligentes desde o projeto",
+        "Smart = soluções arquitetônicas inovadoras",
+        "Smart = timing de mercado perfeito",
+        "Smart = bom para viver e investir"
+      ],
+      "ctaLabel": "Receber apresentação"
+    },
+    "location": {
+      "neighborhood": "Região Continental",
+      "city": "Florianópolis",
+      "state": "SC",
+      "address": "Rua Afonso Pena, 1171",
+      "mapUrl": "https://maps.google.com/?q=Rua+Afonso+Pena,+1171,+Florianopolis,+SC",
+      "highlights": [
+        "Endereço com acesso pela Rua Afonso Pena e conexões com vias estratégicas do continente.",
+        "A 2 minutos do Hospital Florianópolis e de colégios como Salvatoriano e Despertar.",
+        "A 5 minutos da Beiramar Estreito e 6 minutos da Ponte Hercílio Luz.",
+        "Próximo a mercados, academias, farmácias e shoppings da região continental.",
+        "A 10 minutos do Mercado Público e do Shopping Beiramar, segundo o material."
+      ],
+      "image": "/empreendimentos/cota-365/catalogo/localizacao-aerea.webp"
+    },
+    "highlights": [
+      "01 torre com 10 pavimentos residenciais e rooftop",
+      "175 unidades residenciais entre studios e apartamentos de 2 dormitórios",
+      "1.500m² de área de lazer",
+      "4 lojas comerciais no térreo/intermediário",
+      "3 elevadores e estrutura com hobby boxes",
+      "Pré-lançamento com conceito Smart 365"
+    ],
+    "spotlight": {
+      "image": "/empreendimentos/cota-365/catalogo/piscina-rooftop.webp",
+      "title": "Rooftop com lazer para transformar o alto do prédio em rotina.",
+      "description": "Piscina adulto e infantil, Fitness 365, Fitness Sky, Zen 365, Sport Bar, sauna seca, gourmet, salão de festas, Sky Lounge, terraço descoberto e deck piscina criam uma experiência de uso todos os dias.",
+      "items": [
+        "Piscina adulto e infantil",
+        "Fitness 365 e Fitness Sky",
+        "Sport Bar, Sky Lounge e Espaço Gourmet",
+        "Sauna seca, Zen 365 e terraço descoberto"
+      ]
+    },
+    "technology": {
+      "title": "Tecnologia, segurança e desempenho técnico no projeto.",
+      "subtitle": "O material apresenta projeto em BIM, controle de acesso, soluções acústicas, eficiência nas garagens e infraestrutura para automação.",
+      "items": [
+        "Projeto desenvolvido integralmente em BIM",
+        "Controle de acesso por reconhecimento facial nas áreas condominiais",
+        "Monitoramento 24 horas de acessos e áreas comuns",
+        "Portões com leitura automática de placas",
+        "Paredes duplas com isolamento acústico entre unidades",
+        "Fechadura eletrônica nos apartamentos",
+        "Infraestrutura para automação",
+        "Gerador para cargas condominiais",
+        "02 vagas para carro elétrico com 22kW de potência total",
+        "Iluminação LED com sensor de presença nas garagens"
+      ]
+    },
+    "apartmentFeatures": [
+      "Studios de aproximadamente 29m² a 30,50m² com opções com ou sem vaga e hobby box",
+      "Apartamentos de 2 dormitórios com 1 suíte entre 68,30m² e 72,48m²",
+      "Apartamentos de 2 dormitórios com 2 suítes a partir de 69m²",
+      "Paredes duplas com isolamento acústico entre unidades",
+      "Fechadura eletrônica e infraestrutura para automação",
+      "Piso vinílico nas áreas íntimas e porcelanato nas áreas molhadas/sociais"
+    ],
+    "amenities": [
+      "Coworking",
+      "Podcast 365",
+      "Café 365",
+      "Fitness 365",
+      "Fitness Sky",
+      "Zen 365",
+      "Sauna seca",
+      "Market 365",
+      "Delivery 365",
+      "Lavanderia 365",
+      "Praça 365",
+      "Pet Place",
+      "Smart Locker",
+      "Piscina adulto e infantil",
+      "Espaço Gourmet",
+      "Salão de Festas",
+      "Sport Bar",
+      "Sky Lounge"
+    ],
+    "gallery": [
+      {
+        "src": "/empreendimentos/cota-365/catalogo/fachada-hero.webp",
+        "alt": "Fachada do Cota 365",
+        "category": "Fachada",
+        "recommendedUse": "Imagem principal do empreendimento"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/localizacao-aerea.webp",
+        "alt": "Localização aérea do Cota 365 na Região Continental",
+        "category": "Localização",
+        "recommendedUse": "Prova de endereço e conexão"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/hall.webp",
+        "alt": "Hall do Cota 365",
+        "category": "Áreas comuns",
+        "recommendedUse": "Primeira impressão e chegada"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/lobby-cafe.webp",
+        "alt": "Lobby 365 com Café 365",
+        "category": "Conveniência",
+        "recommendedUse": "Rotina e conexão"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/praca-365.webp",
+        "alt": "Praça 365",
+        "category": "Convivência",
+        "recommendedUse": "Área externa e natureza"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/fitness-365.webp",
+        "alt": "Fitness 365",
+        "category": "Saúde",
+        "recommendedUse": "Bem-estar e rotina"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/sport-bar.webp",
+        "alt": "Sport Bar do Cota 365",
+        "category": "Lazer",
+        "recommendedUse": "Social e experiência"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/espaco-gourmet.webp",
+        "alt": "Espaço Gourmet com vista",
+        "category": "Lazer",
+        "recommendedUse": "Receber e celebrar"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/salao-festas.webp",
+        "alt": "Salão de festas do Cota 365",
+        "category": "Lazer",
+        "recommendedUse": "Eventos e encontros"
+      },
+      {
+        "src": "/empreendimentos/cota-365/catalogo/piscina-rooftop.webp",
+        "alt": "Piscina adulto e infantil no rooftop",
+        "category": "Rooftop",
+        "recommendedUse": "Desejo visual"
+      }
+    ],
+    "floorPlans": [
+      {
+        "name": "Final 04 Studio",
+        "area": "29,37m²",
+        "bedrooms": "Studio",
+        "parking": "opcional",
+        "image": "/empreendimentos/cota-365/catalogo/planta-final-04-studio.webp"
+      },
+      {
+        "name": "Final 02",
+        "area": "72,48m²",
+        "bedrooms": "2",
+        "suites": "1",
+        "parking": "1 vaga",
+        "image": "/empreendimentos/cota-365/catalogo/planta-final-02.webp"
+      },
+      {
+        "name": "Final 03",
+        "area": "69,08m²",
+        "bedrooms": "2",
+        "suites": "2",
+        "parking": "vaga estendida",
+        "image": "/empreendimentos/cota-365/catalogo/planta-final-03.webp"
+      },
+      {
+        "name": "Final 16",
+        "area": "68,30m²",
+        "bedrooms": "2",
+        "suites": "1",
+        "parking": "1 vaga",
+        "image": "/empreendimentos/cota-365/catalogo/planta-final-16.webp"
+      }
+    ],
+    "cta": {
+      "primaryLabel": "Receber apresentação",
+      "secondaryLabel": "Falar com consultor",
+      "whatsapp": "5548988506977",
+      "message": "Olá! Quero receber a apresentação, plantas e condições do pré-lançamento Cota 365."
+    },
+    "seo": {
+      "title": "Cota 365 | Pré-lançamento na Região Continental de Florianópolis",
+      "description": "Conheça o Cota 365, pré-lançamento smart na Rua Afonso Pena, Florianópolis, com studios, apartamentos de 2 dormitórios, lojas comerciais e 1.500m² de lazer.",
+      "image": "/empreendimentos/cota-365/catalogo/fachada-hero.webp"
+    }
+  }
+}

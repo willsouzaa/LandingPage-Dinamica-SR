@@ -1,0 +1,292 @@
+{
+  "strategy": {
+    "version": "1.0",
+    "source": {
+      "type": "pdf",
+      "file": "/home/willsouza/Downloads/BOOK-PARK-VIEW-RESIDENCE.pdf",
+      "pagesAnalyzed": 15
+    },
+    "positioning": {
+      "commercialAngle": "Lançamento boutique em Coqueiros, com apenas 16 unidades residenciais, vista para a Baía Sul e endereço próximo ao Parque de Coqueiros.",
+      "targetAudience": [
+        "compradores que buscam morar em Coqueiros com praticidade urbana",
+        "investidores interessados em studios e unidades compactas em região valorizada",
+        "clientes que valorizam localização, baixa densidade e plantas funcionais"
+      ],
+      "mainPromise": "Viver ou investir na melhor localização de Coqueiros, em uma torre única com studios e apartamentos compactos de alto padrão.",
+      "conversionGoal": "Gerar contato qualificado para envio de plantas, disponibilidade e condições comerciais."
+    },
+    "contentPlan": {
+      "narrative": [
+        "Abrir com fachada e vista para a Baía Sul para fixar desejo e localização.",
+        "Provar valor pelo bairro: Coqueiros, Parque de Coqueiros, Avenida Max de Souza, ciclovias, comércio e via gastronômica.",
+        "Explicar o produto com torre única, 16 unidades e mix de plantas.",
+        "Destacar diferenciais funcionais: área de serviço separada, gardens, sacadas, acessibilidade e sustentabilidade.",
+        "Fechar com captura de lead e modal inteligente para recuperar interesse antes da saída."
+      ],
+      "customSections": [
+        {
+          "key": "custom:park-view-unit-mix",
+          "reason": "A seção padrão de plantas não vende tão bem a combinação de escassez, tipologias e sala comercial. A seção customizada organiza o mix como argumento de investimento e moradia."
+        },
+        {
+          "key": "custom:lead-capture-modal",
+          "reason": "Empreendimento de lançamento com poucas unidades se beneficia de recuperação de intenção via modal após tempo de leitura, scroll ou tentativa de saída."
+        }
+      ],
+      "omittedStandardSections": [
+        {
+          "section": "amenities",
+          "reason": "O PDF não apresenta lazer interno completo; o lazer mais forte é urbano, no Parque de Coqueiros e no bairro."
+        },
+        {
+          "section": "gallery",
+          "reason": "As imagens foram usadas de forma contextual em seções comerciais, evitando uma galeria genérica com pouca argumentação."
+        }
+      ]
+    },
+    "assets": [
+      "/empreendimentos/park-view-residence/catalogo/fachada-baia-sul.webp",
+      "/empreendimentos/park-view-residence/catalogo/logo-park-view.webp",
+      "/empreendimentos/park-view-residence/catalogo/fachada-vertical.webp",
+      "/empreendimentos/park-view-residence/catalogo/localizacao-baia-sul.webp",
+      "/empreendimentos/park-view-residence/catalogo/parque-coqueiros.webp",
+      "/empreendimentos/park-view-residence/catalogo/avenida-max-de-souza.webp",
+      "/empreendimentos/park-view-residence/catalogo/entrada-acessivel.webp",
+      "/empreendimentos/park-view-residence/catalogo/garden-sustentabilidade.webp",
+      "/empreendimentos/park-view-residence/catalogo/sala-comercial.webp",
+      "/empreendimentos/park-view-residence/catalogo/bicicletario-garagem.webp",
+      "/empreendimentos/park-view-residence/catalogo/espacos-integrados.webp",
+      "/empreendimentos/park-view-residence/catalogo/area-servico.webp",
+      "/empreendimentos/park-view-residence/catalogo/dormitorio.webp",
+      "/empreendimentos/park-view-residence/catalogo/banheiro.webp",
+      "/empreendimentos/park-view-residence/catalogo/planta-101-garden.webp",
+      "/empreendimentos/park-view-residence/catalogo/planta-102-802-studio.webp",
+      "/empreendimentos/park-view-residence/catalogo/planta-201-garden.webp",
+      "/empreendimentos/park-view-residence/catalogo/planta-301-801.webp",
+      "/empreendimentos/park-view-residence/catalogo/tbo-construtora.webp"
+    ]
+  },
+  "development": {
+    "slug": "park-view-residence",
+    "template": "investment-value",
+    "sections": [
+      "hero",
+      "essencia",
+      "building",
+      "location",
+      "spotlight",
+      "custom:park-view-unit-mix",
+      "technology",
+      "leadForm",
+      "custom:lead-capture-modal",
+      "footer"
+    ],
+    "name": "Park View Residence",
+    "status": "launch",
+    "brand": {
+      "logo": "/empreendimentos/park-view-residence/catalogo/logo-park-view.webp",
+      "logoAlt": "Park View Residence",
+      "logoContrast": "light"
+    },
+    "hero": {
+      "badgeText": "Lançamento em Coqueiros",
+      "title": "Park View Residence",
+      "subtitle": "Torre única com apenas 16 unidades residenciais, studios e apartamentos compactos na melhor localização de Coqueiros, com vista para a Baía Sul e o Parque de Coqueiros a poucos passos.",
+      "impactPhrase": "Onde cada espaço é uma história esperando para ser vivida.",
+      "backgroundImage": "/empreendimentos/park-view-residence/catalogo/fachada-baia-sul.webp",
+      "buildingImage": "/empreendimentos/park-view-residence/catalogo/fachada-vertical.webp"
+    },
+    "theme": {
+      "primaryColor": "#c0aa63",
+      "secondaryColor": "#2f2f2c",
+      "backgroundColor": "#f7f4ed",
+      "surfaceColor": "#ffffff",
+      "textColor": "#25221e",
+      "mutedColor": "#6d665d",
+      "fontTitle": "Cormorant Garamond",
+      "fontBody": "Inter"
+    },
+    "essencia": {
+      "sectionLabel": "Essência do projeto",
+      "title": "Coqueiros em versão boutique.",
+      "text": "Um lançamento para quem quer morar ou investir em uma região consolidada, com mobilidade, comércio, gastronomia e contato visual com a Baía Sul.",
+      "cards": [
+        "Torre única com apenas 16 unidades residenciais",
+        "Studios e apartamentos compactos de 32,96m² a 64,96m²",
+        "A poucos passos do Parque de Coqueiros",
+        "Vista para a Baía Sul em uma região de alta valorização"
+      ],
+      "ctaLabel": "Receber plantas"
+    },
+    "location": {
+      "address": "Avenida Engenheiro Max de Souza, 926",
+      "neighborhood": "Coqueiros",
+      "city": "Florianópolis",
+      "state": "SC",
+      "image": "/empreendimentos/park-view-residence/catalogo/localizacao-baia-sul.webp",
+      "highlights": [
+        "Na Avenida Engenheiro Max de Souza, eixo urbano de Coqueiros.",
+        "A poucos passos do Parque de Coqueiros, com 35.000m² para lazer, caminhadas e grandes eventos.",
+        "Vista privilegiada para a Baía Sul.",
+        "Bairro reconhecido por infraestrutura urbana, ciclovias e via gastronômica.",
+        "Cercado por comércios e serviços, incluindo conveniências do dia a dia."
+      ]
+    },
+    "highlights": [
+      {
+        "title": "Apenas 16 unidades",
+        "description": "Torre única com baixa densidade e leitura de empreendimento boutique."
+      },
+      {
+        "title": "Studios modernos",
+        "description": "Unidades compactas e integradas, pensadas para praticidade e liquidez."
+      },
+      {
+        "title": "Vista para a Baía Sul",
+        "description": "Um diferencial emocional e de valorização para o endereço."
+      },
+      {
+        "title": "Endereço valorizado",
+        "description": "Coqueiros combina parque, gastronomia, comércio e mobilidade."
+      }
+    ],
+    "spotlight": {
+      "title": "Uma sala comercial de 125,19m² no hall de entrada.",
+      "description": "O térreo ganha um ativo comercial com mezanino, jardim e plataforma de elevação, reforçando conveniência e movimento no próprio endereço.",
+      "image": "/empreendimentos/park-view-residence/catalogo/sala-comercial.webp",
+      "items": [
+        "Sala comercial de 77,80m²",
+        "Mezanino de 29,85m²",
+        "Jardim de 10,26m²",
+        "Área total apresentada de 125,19m²"
+      ]
+    },
+    "technology": {
+      "title": "Conveniência, acessibilidade e sustentabilidade no projeto.",
+      "description": "O Park View combina soluções funcionais para o cotidiano com recursos que valorizam mobilidade, uso racional e praticidade.",
+      "image": "/empreendimentos/park-view-residence/catalogo/entrada-acessivel.webp",
+      "items": [
+        "Plataforma elevatória para maior mobilidade no acesso.",
+        "Compartimento de captação de água da chuva para uso nas áreas externas.",
+        "Bicicletário para moradores e comerciantes.",
+        "Garagem no subsolo com vagas limitadas a serem comercializadas."
+      ]
+    },
+    "apartmentFeatures": [
+      {
+        "title": "Espaços integrados",
+        "description": "Ambientes compactos com integração entre estar, jantar e cozinha para ampliar a sensação de uso.",
+        "image": "/empreendimentos/park-view-residence/catalogo/espacos-integrados.webp"
+      },
+      {
+        "title": "Área de serviço separada",
+        "description": "Diferencial relevante nas unidades de 1 dormitório, trazendo mais organização ao cotidiano.",
+        "image": "/empreendimentos/park-view-residence/catalogo/area-servico.webp"
+      },
+      {
+        "title": "Alto padrão construtivo",
+        "description": "Acabamentos e ambientes projetados para uma experiência residencial mais valorizada.",
+        "image": "/empreendimentos/park-view-residence/catalogo/dormitorio.webp"
+      },
+      {
+        "title": "Gardens, sacadas e terraços",
+        "description": "Tipologias com áreas externas que ampliam uso, iluminação e desejo de moradia.",
+        "image": "/empreendimentos/park-view-residence/catalogo/garden-sustentabilidade.webp"
+      }
+    ],
+    "amenities": [
+      {
+        "title": "Parque de Coqueiros",
+        "description": "35.000m² de lazer urbano a poucos passos do endereço.",
+        "image": "/empreendimentos/park-view-residence/catalogo/parque-coqueiros.webp"
+      },
+      {
+        "title": "Bicicletário",
+        "description": "Estrutura para moradores e comerciantes, alinhada ao bairro com ciclovias.",
+        "image": "/empreendimentos/park-view-residence/catalogo/bicicletario-garagem.webp"
+      },
+      {
+        "title": "Garagem no subsolo",
+        "description": "Vagas limitadas a serem comercializadas, agregando conveniência e valor.",
+        "image": "/empreendimentos/park-view-residence/catalogo/bicicletario-garagem.webp"
+      },
+      {
+        "title": "Via gastronômica",
+        "description": "Coqueiros é reconhecido por sua infraestrutura e oferta gastronômica.",
+        "image": "/empreendimentos/park-view-residence/catalogo/avenida-max-de-souza.webp"
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/empreendimentos/park-view-residence/catalogo/fachada-baia-sul.webp",
+        "alt": "Fachada do Park View Residence com vista para a Baía Sul"
+      },
+      {
+        "src": "/empreendimentos/park-view-residence/catalogo/fachada-vertical.webp",
+        "alt": "Fachada vertical do Park View Residence"
+      },
+      {
+        "src": "/empreendimentos/park-view-residence/catalogo/localizacao-baia-sul.webp",
+        "alt": "Localização do Park View Residence próxima à Baía Sul"
+      },
+      {
+        "src": "/empreendimentos/park-view-residence/catalogo/parque-coqueiros.webp",
+        "alt": "Parque de Coqueiros próximo ao Park View Residence"
+      },
+      {
+        "src": "/empreendimentos/park-view-residence/catalogo/espacos-integrados.webp",
+        "alt": "Ambientes integrados do Park View Residence"
+      },
+      {
+        "src": "/empreendimentos/park-view-residence/catalogo/dormitorio.webp",
+        "alt": "Dormitório do Park View Residence"
+      },
+      {
+        "src": "/empreendimentos/park-view-residence/catalogo/banheiro.webp",
+        "alt": "Banheiro do Park View Residence"
+      },
+      {
+        "src": "/empreendimentos/park-view-residence/catalogo/tbo-construtora.webp",
+        "alt": "TBO Construção e Incorporação no Park View Residence"
+      }
+    ],
+    "floorPlans": [
+      {
+        "name": "101 Garden",
+        "area": "60,10m²",
+        "description": "1 dormitório, área de serviço e terraço garden.",
+        "image": "/empreendimentos/park-view-residence/catalogo/planta-101-garden.webp"
+      },
+      {
+        "name": "102 a 802",
+        "area": "32,96m²",
+        "description": "Studio integrado com sacada.",
+        "image": "/empreendimentos/park-view-residence/catalogo/planta-102-802-studio.webp"
+      },
+      {
+        "name": "201 Garden",
+        "area": "64,96m²",
+        "description": "1 dormitório, área de serviço e terraço.",
+        "image": "/empreendimentos/park-view-residence/catalogo/planta-201-garden.webp"
+      },
+      {
+        "name": "301 a 801",
+        "area": "48,83m²",
+        "description": "1 dormitório, área de serviço e terraço.",
+        "image": "/empreendimentos/park-view-residence/catalogo/planta-301-801.webp"
+      }
+    ],
+    "cta": {
+      "primaryLabel": "Receber catálogo no WhatsApp",
+      "secondaryLabel": "Falar com consultor",
+      "whatsapp": "5548988506977",
+      "message": "Olá! Quero receber plantas, disponibilidade e condições comerciais do Park View Residence em Coqueiros."
+    },
+    "seo": {
+      "title": "Park View Residence em Coqueiros | San Remo Imóveis",
+      "description": "Lançamento em Coqueiros, Florianópolis: torre única com 16 unidades, studios, apartamentos garden, vista para a Baía Sul e localização próxima ao Parque de Coqueiros.",
+      "image": "/empreendimentos/park-view-residence/catalogo/fachada-baia-sul.webp"
+    }
+  }
+}

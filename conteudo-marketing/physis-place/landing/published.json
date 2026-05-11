@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "status": "published",
+  "source": "ai",
+  "createdAt": "2026-05-11T13:17:38-03:00",
+  "updatedAt": "2026-05-11T16:30:45.528Z",
+  "strategy": {
+    "commercialAngle": "Alto padrão biofílico no Centro de Florianópolis, com torre única, apenas 43 unidades, wellness, Pocket Park e acesso rápido à Beira-Mar Norte.",
+    "mainPromise": "Um refúgio urbano de alto padrão onde o Centro de Floripa desacelera.",
+    "targetAudience": [
+      "compradores de alto padrão que querem morar no Centro sem abrir mão de privacidade",
+      "famílias e casais que valorizam apartamentos amplos de 2 a 4 suítes",
+      "clientes que buscam wellness, biofilia e áreas de convivência sofisticadas",
+      "investidores patrimoniais atentos à escassez de produtos exclusivos no Centro"
+    ],
+    "templateReason": "O template luxury-residence favorece a narrativa de exclusividade, assinatura arquitetônica, imagens de interiores e áreas de lazer sofisticadas.",
+    "sectionReason": "A sequência usa seções padrão para cobrir promessa, essência biofílica, arquitetura, localização, Pocket Park, wellness, galeria, tipologias e atributos técnicos.",
+    "customSectionsReason": "Não foi criada seção customizada porque o Pocket Park, a assinatura Leo Maia/JA8 e os dados de exclusividade cabem bem em spotlight, essencia, building e technology.",
+    "missingInformation": [
+      "preço e condições comerciais",
+      "prazo de entrega",
+      "plantas detalhadas das unidades",
+      "número de vagas por tipologia",
+      "status comercial atualizado de disponibilidade"
+    ]
+  },
+  "validation": {
+    "ok": true,
+    "issues": [],
+    "warnings": []
+  },
+  "development": {
+    "slug": "physis-place",
+    "template": "luxury-residence",
+    "sections": [
+      "hero",
+      "essencia",
+      "building",
+      "location",
+      "spotlight",
+      "floorPlans",
+      "technology",
+      "leadForm",
+      "footer"
+    ],
+    "name": "Physis Place",
+    "status": "launch",
+    "brand": {
+      "name": "Physis Place",
+      "logo": "/empreendimentos/physis-place/catalogo/logo.webp",
+      "logoContrast": "dark"
+    },
+    "hero": {
+      "variant": "side-impact",
+      "backgroundWord": "PHYSIS",
+      "title": "Refúgio urbano",
+      "subtitle": "Rua Presidente Coutinho, 182. Centro de Florianópolis, a 600 metros da Beira-Mar Norte.",
+      "impactPhrase": "A essência do alto padrão renasce no Centro de Floripa.",
+      "badgeText": "2 a 4 suítes no Centro",
+      "buildingImage": "/empreendimentos/physis-place/catalogo/fachada-hero.webp",
+      "backgroundImage": "/empreendimentos/physis-place/catalogo/beira-mar-centro.webp",
+      "transitionImages": [
+        "/empreendimentos/physis-place/catalogo/pocket-park.webp",
+        "/empreendimentos/physis-place/catalogo/piscina.webp",
+        "/empreendimentos/physis-place/catalogo/living.webp"
+      ]
+    },
+    "theme": {
+      "primary": "#0A4A36",
+      "secondary": "#082E2C",
+      "background": "#F4F1EA",
+      "surface": "#FFFFFF",
+      "text": "#20302B",
+      "muted": "#6C746E",
+      "accent": "#C1A875",
+      "fontTitle": "Cormorant Garamond",
+      "fontBody": "Inter"
+    },
+    "essencia": {
+      "sectionLabel": "Filosofia de biofilia",
+      "title": "Onde a modernidade abraça o verde e a calma.",
+      "text": "O Physis Place combina o dinamismo do Centro com a tranquilidade de uma torre única e exclusiva. A arquitetura biofílica traz elementos orgânicos para dentro do cotidiano, criando recantos de bem-estar, contemplação e convivência.",
+      "cards": [
+        "Apenas 43 unidades",
+        "2 a 4 suítes de 115 a 341 m²",
+        "Assinatura Studio Leo Maia",
+        "Paisagismo JA8 Arquitetura Viva"
+      ],
+      "ctaLabel": "Receber apresentação"
+    },
+    "location": {
+      "neighborhood": "Centro",
+      "city": "Florianópolis",
+      "state": "SC",
+      "address": "Rua Presidente Coutinho, 182",
+      "mapUrl": "https://maps.google.com/?q=Rua+Presidente+Coutinho,+182,+Centro,+Florianopolis,+SC",
+      "highlights": [
+        "600 metros da Av. Beira-Mar Norte",
+        "400 metros do Colégio Catarinense",
+        "300 metros do Supermercado Angeloni",
+        "300 metros do Imperatriz Gourmet",
+        "600 metros do Supermercado Hippo"
+      ],
+      "image": "/empreendimentos/physis-place/catalogo/mapa-centro.webp"
+    },
+    "highlights": [
+      "Torre única e exclusiva no Centro",
+      "43 unidades em 15 pavimentos mais cobertura",
+      "Tipologias de 2 a 4 suítes",
+      "Metragens de 115 a 341 m²",
+      "Aproximadamente 700 m² de lazer",
+      "Pocket Park com curadoria de Placemaking"
+    ],
+    "spotlight": {
+      "image": "/empreendimentos/physis-place/catalogo/pocket-park.webp",
+      "title": "Pocket Park: pausa verde no pulso da cidade.",
+      "description": "Um espaço sofisticado de convivência e relaxamento, pensado para despertar a relação com a natureza e desacelerar a rotina no coração de Florianópolis.",
+      "items": [
+        "Curadoria especializada em Placemaking",
+        "Paisagismo assinado pela JA8 Arquitetura Viva",
+        "Ambiente de convivência e contemplação",
+        "Integração do verde às áreas comuns",
+        "Refúgio urbano no Centro"
+      ]
+    },
+    "technology": {
+      "title": "Conforto técnico para morar melhor",
+      "subtitle": "Os apartamentos foram pensados para ampliar integração, silêncio, praticidade e sensação de amplitude.",
+      "items": [
+        "Piso nivelado entre living e terraço",
+        "Infraestrutura para ar-condicionado nos dormitórios e áreas sociais",
+        "Infraestrutura para uso de aspiração central",
+        "3 pontos de água quente para uso simultâneo",
+        "Ponto para coifa",
+        "Esquadrias piso-teto"
+      ]
+    },
+    "apartmentFeatures": [
+      "Amplas sacadas",
+      "Opções duplex",
+      "Coberturas",
+      "Piso nivelado entre living e terraço",
+      "Infraestrutura para ar-condicionado",
+      "Infraestrutura para aspiração central",
+      "3 pontos de água quente para uso simultâneo",
+      "Ponto para coifa",
+      "Esquadrias piso-teto",
+      "Personalizações para unidades de 4 suítes"
+    ],
+    "amenities": [
+      "Piscina",
+      "Pocket Park",
+      "Cafeteria e lojas",
+      "Sala de massagem",
+      "Espaço Kids",
+      "Salão de festas Gourmet",
+      "Sauna",
+      "Pet Place",
+      "Espaços para descompressão",
+      "Academia",
+      "Espaço Wellness"
+    ],
+    "gallery": [
+      {
+        "src": "/empreendimentos/physis-place/catalogo/pocket-park.webp",
+        "alt": "Pocket Park do Physis Place",
+        "category": "Biofilia",
+        "recommendedUse": "destaque comercial"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/piscina.webp",
+        "alt": "Piscina do Physis Place",
+        "category": "Lazer",
+        "recommendedUse": "galeria de lazer"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/hall.webp",
+        "alt": "Hall do Physis Place",
+        "category": "Áreas comuns",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/salao-festas.webp",
+        "alt": "Salão de festas Gourmet do Physis Place",
+        "category": "Áreas comuns",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/sauna.webp",
+        "alt": "Sauna do Physis Place",
+        "category": "Wellness",
+        "recommendedUse": "galeria wellness"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/sala-massagem.webp",
+        "alt": "Sala de massagem do Physis Place",
+        "category": "Wellness",
+        "recommendedUse": "galeria wellness"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/academia.webp",
+        "alt": "Academia do Physis Place",
+        "category": "Wellness",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/espaco-wellness.webp",
+        "alt": "Espaço Wellness do Physis Place",
+        "category": "Wellness",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/fachada-hero.webp",
+        "alt": "Fachada biofílica do Physis Place",
+        "category": "Arquitetura",
+        "recommendedUse": "hero e apresentação do empreendimento"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/beira-mar-centro.webp",
+        "alt": "Vista da Beira-Mar Norte e Centro de Florianópolis",
+        "category": "Localização",
+        "recommendedUse": "contexto urbano"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/terraco-duplex.webp",
+        "alt": "Terraço de unidade duplex do Physis Place",
+        "category": "Apartamento",
+        "recommendedUse": "tipologias"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/living.webp",
+        "alt": "Living de apartamento do Physis Place",
+        "category": "Apartamento",
+        "recommendedUse": "interiores"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/apartamento-decorado.webp",
+        "alt": "Apartamento decorado do Physis Place",
+        "category": "Decorado",
+        "recommendedUse": "chamada para visita"
+      },
+      {
+        "src": "/empreendimentos/physis-place/catalogo/floripa-praias.webp",
+        "alt": "Floripa e praias com acesso a partir do Centro",
+        "category": "Localização",
+        "recommendedUse": "lifestyle"
+      }
+    ],
+    "floorPlans": [
+      {
+        "name": "2 suítes",
+        "area": "A partir de 115 m²",
+        "bedrooms": "2",
+        "suites": "2",
+        "parking": "Consultar"
+      },
+      {
+        "name": "3 suítes",
+        "area": "Consulte metragens",
+        "bedrooms": "3",
+        "suites": "3",
+        "parking": "Consultar"
+      },
+      {
+        "name": "Duplex e coberturas",
+        "area": "Até 341 m²",
+        "bedrooms": "Até 4",
+        "suites": "Até 4",
+        "parking": "Consultar"
+      }
+    ],
+    "cta": {
+      "primaryLabel": "Receber apresentação",
+      "secondaryLabel": "Agendar visita ao decorado",
+      "whatsapp": "5548988506977",
+      "message": "Olá, tenho interesse no Physis Place e gostaria de receber a apresentação completa."
+    },
+    "seo": {
+      "title": "Physis Place | Alto padrão no Centro de Florianópolis",
+      "description": "Physis Place, empreendimento CBA no Centro de Florianópolis, com 43 unidades de 2 a 4 suítes, 115 a 341 m², Pocket Park, wellness e assinatura Studio Leo Maia.",
+      "image": "/empreendimentos/physis-place/catalogo/fachada-hero.webp"
+    }
+  }
+}

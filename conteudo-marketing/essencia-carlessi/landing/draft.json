@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "source": "ai",
+  "createdAt": "2026-05-11T12:14:31-03:00",
+  "updatedAt": "2026-05-11T12:14:31-03:00",
+  "strategy": {
+    "commercialAngle": "Lançamento residencial no Córrego Grande que combina rotina urbana, acesso direto ao Parque Linear e lazer completo no próprio empreendimento.",
+    "mainPromise": "Viver no Córrego Grande com natureza, praticidade e bem-estar todos os dias.",
+    "targetAudience": [
+      "famílias que buscam lazer completo e áreas verdes próximas",
+      "casais e profissionais que valorizam localização estratégica em Florianópolis",
+      "investidores atentos à proximidade com UFSC, UDESC e serviços",
+      "compradores que procuram apartamentos compactos, plantas de 2 dormitórios ou coberturas"
+    ],
+    "templateReason": "O template luxury-residence valoriza fachada, áreas comuns e narrativa de bem-estar, compatível com o posicionamento premium do catálogo.",
+    "sectionReason": "A página usa hero, essência, building, location, spotlight, amenities, gallery, floorPlans, technology, leadForm e footer para cobrir desejo visual, localização, lazer, plantas e atributos técnicos.",
+    "customSectionsReason": "Não foi criada seção customizada porque as seções padrão comportam bem os diferenciais comerciais: acesso ao Parque Linear, lazer aquecido, sustentabilidade, lojas térreas e plantas variadas.",
+    "missingInformation": [
+      "preço e condições comerciais",
+      "prazo de entrega",
+      "quantidade total de unidades residenciais",
+      "disponibilidade atual por tipologia",
+      "número de vagas por unidade"
+    ]
+  },
+  "validation": {
+    "ok": true,
+    "issues": [],
+    "warnings": []
+  },
+  "development": {
+    "slug": "essencia-carlessi",
+    "template": "luxury-residence",
+    "sections": [
+      "hero",
+      "essencia",
+      "building",
+      "location",
+      "spotlight",
+      "amenities",
+      "gallery",
+      "floorPlans",
+      "technology",
+      "leadForm",
+      "footer"
+    ],
+    "name": "Essência Carlessi",
+    "status": "launch",
+    "brand": {
+      "name": "Essência Carlessi",
+      "logo": "/empreendimentos/essencia-carlessi/catalogo/logo-essencia-carlessi.webp",
+      "logoContrast": "light"
+    },
+    "hero": {
+      "variant": "side-impact",
+      "backgroundWord": "ESSÊNCIA",
+      "title": "Viver com Essência",
+      "subtitle": "No Córrego Grande, onde a cidade respira movimento e a natureza inspira.",
+      "impactPhrase": "Bem-estar, verde e conveniência no mesmo endereço.",
+      "badgeText": "Lançamento no Córrego Grande",
+      "buildingImage": "/empreendimentos/essencia-carlessi/catalogo/fachada-essencia.webp",
+      "backgroundImage": "/empreendimentos/essencia-carlessi/catalogo/aereo-corrego-grande.webp",
+      "transitionImages": [
+        "/empreendimentos/essencia-carlessi/catalogo/piscina-aquecida.webp",
+        "/empreendimentos/essencia-carlessi/catalogo/academia.webp",
+        "/empreendimentos/essencia-carlessi/catalogo/living-apartamento.webp"
+      ]
+    },
+    "theme": {
+      "primary": "#C4432A",
+      "secondary": "#1A1A1A",
+      "background": "#EEEAE5",
+      "surface": "#F7F4F1",
+      "text": "#2D2D2D",
+      "muted": "#7A7068",
+      "accent": "#C4432A",
+      "fontTitle": "Cormorant Garamond",
+      "fontBody": "Inter"
+    },
+    "essencia": {
+      "sectionLabel": "Essência de morar bem",
+      "title": "Um projeto nascido onde a cidade encontra a natureza.",
+      "text": "Com acesso direto ao Parque Linear do Córrego Grande, o Essência conecta seus moradores a uma rotina prática, saudável e integrada ao verde, sem abrir mão das conveniências de Florianópolis.",
+      "cards": [
+        "Acesso direto ao Parque Linear",
+        "Lazer aquecido no 2º pavimento",
+        "Apartamentos com vista livre",
+        "Construtora com tradição desde 1986"
+      ],
+      "ctaLabel": "Receber catálogo"
+    },
+    "location": {
+      "neighborhood": "Córrego Grande",
+      "city": "Florianópolis",
+      "state": "SC",
+      "address": "Rua Sebastião Laurentino da Silva, 30",
+      "mapUrl": "https://maps.google.com/?q=Rua+Sebastião+Laurentino+da+Silva,+30,+Córrego+Grande,+Florianópolis",
+      "highlights": [
+        "Acesso direto ao Parque Linear do Córrego Grande",
+        "Próximo à UFSC e à UDESC",
+        "Perto do Shopping Villa Romana",
+        "No entorno da Cachoeira do Poção e do Parque Ecológico",
+        "Serviços, supermercados, escolas e academias na região"
+      ],
+      "image": "/empreendimentos/essencia-carlessi/catalogo/mapa-localizacao.webp"
+    },
+    "highlights": [
+      "1 e 2 dormitórios, com opção de suíte",
+      "Coberturas com 2 ou 3 dormitórios e suíte",
+      "Piscina adulto aquecida, spa e piscina infantil",
+      "Passeio comercial com 6 lojas térreas",
+      "Áreas comuns mobiliadas, equipadas e decoradas",
+      "Soluções de sustentabilidade e infraestrutura para veículos elétricos"
+    ],
+    "spotlight": {
+      "image": "/empreendimentos/essencia-carlessi/catalogo/loja-terrea.webp",
+      "title": "Conveniência no térreo, vida leve ao redor.",
+      "description": "O passeio comercial com 6 lojas amplia a praticidade do endereço e reforça o potencial urbano do Córrego Grande.",
+      "items": [
+        "6 unidades térreas",
+        "Passeio comercial integrado",
+        "Lavabos privativos",
+        "Infraestrutura PcD",
+        "Medidores individuais de água e energia"
+      ]
+    },
+    "technology": {
+      "title": "Tecnologia, segurança e sustentabilidade",
+      "subtitle": "Detalhes pensados para reduzir atritos da rotina e entregar mais eficiência no uso dos espaços.",
+      "items": [
+        "Hall de entrada com controle de acesso biométrico",
+        "Sistema de segurança com câmeras",
+        "Placas para energia solar nas áreas comuns",
+        "Captação de água pluvial para jardins e limpeza",
+        "Sensores de presença para iluminação",
+        "Aptos com hidrômetros individuais",
+        "Infraestrutura para veículos elétricos",
+        "Vagas individuais para bicicletas"
+      ]
+    },
+    "apartmentFeatures": [
+      "Porta de entrada com fechadura digital",
+      "Persianas motorizadas nos dormitórios",
+      "Churrasqueira a carvão nas sacadas",
+      "Espera para ar-condicionado nas salas e dormitórios",
+      "Lajes com atenuante acústico",
+      "Piso porcelanato retificado",
+      "Aquecimento de água nos banheiros e cozinha",
+      "Tomadas USB nos apartamentos",
+      "Medidores individuais de energia, água e gás",
+      "Vista livre em todos os apartamentos"
+    ],
+    "amenities": [
+      "Piscina adulto aquecida",
+      "Piscina infantil aquecida",
+      "Spa",
+      "Academia",
+      "Salão de festas",
+      "Game Lounge",
+      "Brinquedoteca",
+      "Playground",
+      "Pet Place",
+      "Hall de entrada com acesso biométrico",
+      "Vagas com infraestrutura para veículos elétricos",
+      "Vagas para visitantes com tomada para veículos elétricos",
+      "Vagas individuais para bicicletas",
+      "Vagas de garagem PcD"
+    ],
+    "gallery": [
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/fachada-essencia.webp",
+        "alt": "Fachada do Essência Carlessi no Córrego Grande",
+        "category": "Fachada",
+        "recommendedUse": "hero e abertura da galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/aereo-corrego-grande.webp",
+        "alt": "Vista aérea da localização do Essência Carlessi",
+        "category": "Localização",
+        "recommendedUse": "narrativa de localização"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/hall-entrada.webp",
+        "alt": "Hall de entrada do Essência Carlessi",
+        "category": "Áreas comuns",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/piscina-aquecida.webp",
+        "alt": "Piscina aquecida adulto do Essência Carlessi",
+        "category": "Lazer",
+        "recommendedUse": "destaque de lazer"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/spa-piscina-infantil.webp",
+        "alt": "Spa e piscina infantil aquecida",
+        "category": "Lazer",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/academia.webp",
+        "alt": "Academia com vista panorâmica",
+        "category": "Lazer",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/salao-festas.webp",
+        "alt": "Salão de festas do Essência Carlessi",
+        "category": "Lazer",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/game-lounge.webp",
+        "alt": "Game Lounge do Essência Carlessi",
+        "category": "Lazer",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/brinquedoteca.webp",
+        "alt": "Brinquedoteca do Essência Carlessi",
+        "category": "Família",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/playground.webp",
+        "alt": "Playground do Essência Carlessi",
+        "category": "Família",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/pet-place.webp",
+        "alt": "Pet Place do Essência Carlessi",
+        "category": "Pet",
+        "recommendedUse": "galeria"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/living-apartamento.webp",
+        "alt": "Perspectiva de living de apartamento",
+        "category": "Apartamento",
+        "recommendedUse": "galeria de interiores"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/suite-apartamento.webp",
+        "alt": "Perspectiva de suíte de apartamento",
+        "category": "Apartamento",
+        "recommendedUse": "galeria de interiores"
+      },
+      {
+        "src": "/empreendimentos/essencia-carlessi/catalogo/loja-terrea.webp",
+        "alt": "Perspectiva de loja térrea do Essência Carlessi",
+        "category": "Comercial",
+        "recommendedUse": "spotlight comercial"
+      }
+    ],
+    "floorPlans": [
+      {
+        "name": "1 Dormitório",
+        "area": "37,15 m²",
+        "bedrooms": "1",
+        "suites": "0",
+        "parking": "Consulte disponibilidade",
+        "image": "/empreendimentos/essencia-carlessi/catalogo/planta-1-dormitorio.webp"
+      },
+      {
+        "name": "2 Dormitórios - Tipo 1",
+        "area": "70,60 m²",
+        "bedrooms": "2",
+        "suites": "1",
+        "parking": "Consulte disponibilidade",
+        "image": "/empreendimentos/essencia-carlessi/catalogo/planta-2-dormitorios-tipo-1.webp"
+      },
+      {
+        "name": "2 Dormitórios - Tipo 2",
+        "area": "63,00 m²",
+        "bedrooms": "2",
+        "suites": "1",
+        "parking": "Consulte disponibilidade",
+        "image": "/empreendimentos/essencia-carlessi/catalogo/planta-2-dormitorios-tipo-2.webp"
+      },
+      {
+        "name": "Cobertura - Tipo 1",
+        "area": "171,32 m²",
+        "bedrooms": "3",
+        "suites": "1",
+        "parking": "Consulte disponibilidade",
+        "image": "/empreendimentos/essencia-carlessi/catalogo/planta-cobertura-tipo-1.webp"
+      },
+      {
+        "name": "Cobertura - Tipo 2",
+        "area": "120,37 m²",
+        "bedrooms": "3",
+        "suites": "1",
+        "parking": "Consulte disponibilidade",
+        "image": "/empreendimentos/essencia-carlessi/catalogo/planta-cobertura-tipo-2.webp"
+      },
+      {
+        "name": "Cobertura - Tipo 3",
+        "area": "159,53 m²",
+        "bedrooms": "3",
+        "suites": "1",
+        "parking": "Consulte disponibilidade",
+        "image": "/empreendimentos/essencia-carlessi/catalogo/planta-cobertura-tipo-3-extraida.webp"
+      }
+    ],
+    "cta": {
+      "primaryLabel": "Receber catálogo",
+      "secondaryLabel": "Falar com consultor",
+      "whatsapp": "5548988506977",
+      "message": "Olá, tenho interesse no Essência Carlessi e gostaria de receber mais informações."
+    },
+    "seo": {
+      "title": "Essência Carlessi | Lançamento no Córrego Grande",
+      "description": "Apartamentos de 1 e 2 dormitórios e coberturas no Córrego Grande, com acesso ao Parque Linear, lazer completo, piscina aquecida e lojas térreas.",
+      "image": "/empreendimentos/essencia-carlessi/catalogo/fachada-essencia.webp"
+    }
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "source": "ai",
+  "createdAt": "2026-05-11T15:08:35-03:00",
+  "updatedAt": "2026-05-11T15:08:35-03:00",
+  "strategy": {
+    "commercialAngle": "O Aura Residence deve ser vendido como oportunidade de entrada antecipada em uma localização nobre da Agronômica, com vista Beira-Mar e racional de investimento via construção a preço de custo por SPE.",
+    "mainPromise": "Vista Beira-Mar, bem-estar e preço de custo para quem quer investir com visão em Florianópolis.",
+    "targetAudience": [
+      "investidores que buscam ativo imobiliário em localização nobre",
+      "famílias que desejam morar próximo à Beira-Mar Norte",
+      "compradores que valorizam transparência, prazo e modelo SPE"
+    ],
+    "templateReason": "O template investment-value e a hero side-impact valorizam fachada, localização e tese de investimento sem depender de plantas abertas.",
+    "sectionReason": "A ordem prioriza desejo visual, essência, localização, modelo SPE, lazer, diferenciais técnicos e conversão. A galeria segue disponível pelo botão de modal da seção do empreendimento.",
+    "customSectionsReason": "A seção customizada explica preço de custo, SPE e cronograma previsto de forma mais comercial que as seções padrão.",
+    "missingInformation": [
+      "O PDF não informa mapa_url do Google Maps.",
+      "As imagens do PDF são sinalizadas como ilustrativas e sujeitas a alterações.",
+      "O material não informa quantidade de vagas por tipologia.",
+      "As plantas foram analisadas apenas para tipologias e metragens, sem extração ou exibição na landing."
+    ]
+  },
+  "validation": {
+    "ok": true,
+    "issues": [],
+    "warnings": [
+      "Seção customizada aura-investment-model registrada no registry.",
+      "Plantas baixas não foram incluídas na landing pública."
+    ]
+  },
+  "development": {
+    "slug": "aura-residence",
+    "template": "investment-value",
+    "sections": [
+      "hero",
+      "essencia",
+      "building",
+      "location",
+      "custom:aura-investment-model",
+      "amenities",
+      "technology",
+      "custom:lead-capture-modal",
+      "leadForm",
+      "footer"
+    ],
+    "name": "Aura Residence",
+    "status": "investment",
+    "brand": {
+      "name": "Aura Residence",
+      "logo": "/empreendimentos/aura-residence/catalogo/logo.webp",
+      "logoContrast": "dark"
+    },
+    "hero": {
+      "variant": "side-impact",
+      "backgroundWord": "AURA",
+      "title": "A vista que você sempre sonhou, agora a preço de custo.",
+      "subtitle": "Um projeto na Agronômica, com vista Beira-Mar, lazer completo e modelo de investimento via SPE para quem escolhe com calma e investe com visão.",
+      "impactPhrase": "Beira-Mar, bem-estar e investimento em um mesmo endereço.",
+      "badgeText": "Construção a preço de custo",
+      "buildingImage": "/empreendimentos/aura-residence/catalogo/fachada-hero.webp",
+      "backgroundImage": "/empreendimentos/aura-residence/catalogo/vista-beira-mar.webp",
+      "transitionImages": [
+        "/empreendimentos/aura-residence/catalogo/living-vista.webp",
+        "/empreendimentos/aura-residence/catalogo/espaco-gourmet.webp",
+        "/empreendimentos/aura-residence/catalogo/lounge-piscina.webp"
+      ]
+    },
+    "theme": {
+      "primary": "#9FC6B6",
+      "secondary": "#293D35",
+      "background": "#EEF2ED",
+      "surface": "#FFFFFF",
+      "text": "#18231F",
+      "muted": "#64746D",
+      "accent": "#C8AA79",
+      "fontTitle": "Cormorant Garant",
+      "fontBody": "Inter"
+    },
+    "essencia": {
+      "sectionLabel": "Essência",
+      "title": "Um projeto que nasce no compasso da cidade e da natureza.",
+      "text": "Inspirado pela natureza e pelo bem-estar que Florianópolis oferece, o Aura combina vista, luz natural, infraestrutura completa e uma tese clara de investimento.",
+      "cards": [
+        "Localização privilegiada na Agronômica, com vista Beira-Mar.",
+        "Plantas amplas, pensadas para valorizar luz natural e bem-estar.",
+        "Modelo de investimento via SPE com transparência e governança.",
+        "Infraestrutura completa com lazer, tecnologia e eficiência."
+      ],
+      "ctaLabel": "Receber detalhes"
+    },
+    "location": {
+      "neighborhood": "Agronômica",
+      "city": "Florianópolis",
+      "state": "SC",
+      "address": "R. Dr. Carlos Corrêa, 220, 236 e 240 - Agronômica, Florianópolis",
+      "mapUrl": "",
+      "highlights": [
+        "Vista Beira-Mar",
+        "Região nobre da Agronômica",
+        "Próximo à Beira-Mar em 3 minutos",
+        "Próximo à via expressa em 2 minutos",
+        "Acesso rápido ao Floripa Shopping"
+      ],
+      "image": "/empreendimentos/aura-residence/catalogo/localizacao-agronomica.webp"
+    },
+    "highlights": [
+      "50 unidades residenciais e 3 lojas térreas",
+      "Apartamentos de 2 dormitórios, 2 suítes e 3 suítes",
+      "Metragens de 68m² a 137m² nas unidades residenciais",
+      "Entrega prevista para dezembro de 2029",
+      "Administração pela NOVA Empreendimentos",
+      "Modelo de construção a preço de custo por SPE"
+    ],
+    "spotlight": {
+      "image": "/empreendimentos/aura-residence/catalogo/vista-beira-mar.webp",
+      "title": "Agronômica com vista Beira-Mar como argumento de valor.",
+      "description": "O Aura posiciona o investidor em um dos endereços mais desejados de Florianópolis, com acesso rápido à Beira-Mar e proximidade aos principais deslocamentos da cidade.",
+      "items": [
+        "Beira-Mar a poucos minutos",
+        "Endereço na Rua Dr. Carlos Corrêa",
+        "Vista, mobilidade e valorização percebida"
+      ]
+    },
+    "technology": {
+      "title": "Tecnologia, eficiência e operação mais inteligente.",
+      "subtitle": "Os diferenciais do empreendimento reforçam segurança, economia, conforto acústico e conveniência no uso diário.",
+      "items": [
+        "Monitoramento por câmeras",
+        "Wi-Fi nas áreas comuns",
+        "Infraestrutura para carro elétrico",
+        "Portaria remota e acesso digital",
+        "Aquecimento central de água",
+        "Reaproveitamento da água da chuva",
+        "Peças sanitárias de baixo consumo",
+        "Sonorização ambiente",
+        "2 elevadores",
+        "Eclusa com espaço para delivery"
+      ]
+    },
+    "apartmentFeatures": [
+      "Nicho no box dos banheiros",
+      "Porcelanato 90x90",
+      "Ponto de gás",
+      "Sacada com churrasqueira a carvão, exceto unidades final 02",
+      "Contrapiso flutuante para atenuação acústica",
+      "Espera para coifa",
+      "Fechadura digital na porta de entrada",
+      "Parede dupla entre apartamentos",
+      "Infraestrutura para ar-condicionado split",
+      "Esquadrias com persiana integrada",
+      "Ponto para toalheiro elétrico",
+      "Registro monocomando nos chuveiros"
+    ],
+    "amenities": [
+      "Espaço gourmet com área externa",
+      "Brinquedoteca com PlayStation",
+      "Sauna úmida",
+      "Piscina",
+      "Lounge externo",
+      "Fitness",
+      "Sala de massagem",
+      "Mini mercado",
+      "Hall decorado",
+      "Garagem"
+    ],
+    "gallery": [
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/lounge-piscina.webp",
+        "alt": "Lounge externo e piscina do Aura Residence com vista para Florianópolis",
+        "category": "Lazer",
+        "recommendedUse": "Piscina e lounge externo como promessa de pausa, encontro e contemplação."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/espaco-gourmet.webp",
+        "alt": "Espaço gourmet com área externa do Aura Residence",
+        "category": "Lazer",
+        "recommendedUse": "Receber com conforto em um ambiente integrado à vista."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/fitness.webp",
+        "alt": "Fitness do Aura Residence",
+        "category": "Lazer",
+        "recommendedUse": "Treinar sem sair de casa, com infraestrutura de rotina."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/sala-massagem.webp",
+        "alt": "Sala de massagem do Aura Residence",
+        "category": "Bem-estar",
+        "recommendedUse": "Relaxamento e cuidado pessoal dentro do empreendimento."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/hall-decorado.webp",
+        "alt": "Hall decorado do Aura Residence",
+        "category": "Fachada",
+        "recommendedUse": "Primeira impressão sofisticada para moradores e visitantes."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/brinquedoteca.webp",
+        "alt": "Brinquedoteca com PlayStation do Aura Residence",
+        "category": "Lazer",
+        "recommendedUse": "Estrutura pensada para famílias e convivência."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/sauna-umida.webp",
+        "alt": "Sauna úmida do Aura Residence",
+        "category": "Bem-estar",
+        "recommendedUse": "Bem-estar como extensão da rotina."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/fachada-hero.webp",
+        "alt": "Fachada do Aura Residence",
+        "category": "Fachada",
+        "recommendedUse": "Imagem principal de campanha e reconhecimento do projeto."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/vista-beira-mar.webp",
+        "alt": "Vista Beira-Mar a partir da região do Aura Residence",
+        "category": "Localização",
+        "recommendedUse": "Prova visual da localização e da relação com Florianópolis."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/localizacao-agronomica.webp",
+        "alt": "Mapa de localização do Aura Residence na Agronômica",
+        "category": "Localização",
+        "recommendedUse": "Material de apoio para explicar mobilidade e entorno."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/living-vista.webp",
+        "alt": "Living do Aura Residence com vista para o mar",
+        "category": "Apartamento",
+        "recommendedUse": "Desejo de morar com luz natural e vista."
+      },
+      {
+        "src": "/empreendimentos/aura-residence/catalogo/living-integrado.webp",
+        "alt": "Living integrado do Aura Residence",
+        "category": "Apartamento",
+        "recommendedUse": "Amplitude, integração e conforto no interior."
+      }
+    ],
+    "floorPlans": [],
+    "cta": {
+      "primaryLabel": "Receber catálogo",
+      "secondaryLabel": "Falar com consultor",
+      "whatsapp": "5548988506977",
+      "message": "Olá! Quero receber o catálogo, plantas e disponibilidade do Aura Residence."
+    },
+    "seo": {
+      "title": "Aura Residence | Agronômica, Florianópolis | San Remo Imóveis",
+      "description": "Conheça o Aura Residence, oportunidade na Agronômica com vista Beira-Mar, lazer completo e modelo de construção a preço de custo por SPE.",
+      "image": "/empreendimentos/aura-residence/catalogo/fachada-hero.webp"
+    }
+  }
+}

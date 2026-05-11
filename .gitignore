@@ -10,4 +10,8 @@ build/
 tsconfig.tsbuildinfo
 
 # Estrutura de marketing gerada automaticamente
-conteudo-marketing/
+conteudo-marketing/*
+!conteudo-marketing/*/
+conteudo-marketing/*/*
+!conteudo-marketing/*/landing/
+!conteudo-marketing/*/landing/*.json

@@ -124,7 +124,7 @@ export function HeroSideImpact({ development }: HeroSideImpactProps) {
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
             <a
-              href="#manifesto"
+              href="#essencia"
               className="inline-flex justify-center bg-[var(--color-primary)] px-7 py-4 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-[var(--color-surface)] hover:text-[var(--color-secondary)]"
             >
               Descobrir

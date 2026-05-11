@@ -1,0 +1,236 @@
+{
+  "slug": "cota-365",
+  "nome": "Cota 365",
+  "status": "pre-launch",
+  "template": "investment-value",
+  "construtora": null,
+  "entrega": null,
+  "localizacao": {
+    "bairro": "Região Continental",
+    "cidade": "Florianópolis",
+    "estado": "SC",
+    "endereco": "Rua Afonso Pena, 1171",
+    "mapa_url": "https://maps.google.com/?q=Rua+Afonso+Pena,+1171,+Florianopolis,+SC",
+    "destaques": [
+      "Acesso pela Rua Afonso Pena",
+      "2 minutos do Hospital Florianópolis",
+      "5 minutos da Beiramar Estreito",
+      "6 minutos da Ponte Hercílio Luz",
+      "10 minutos do Mercado Público"
+    ]
+  },
+  "hero": {
+    "variant": "side-impact",
+    "backgroundWord": "COTA",
+    "titulo": "Smart para viver. Estratégico para investir.",
+    "subtitulo": "Pré-lançamento na Rua Afonso Pena, com studios, apartamentos de 2 dormitórios, lojas comerciais e estrutura pensada para funcionar 365 dias por ano.",
+    "fraseImpacto": "Um empreendimento smart de verdade.",
+    "seloBadge": "Pré-lançamento Cota 365"
+  },
+  "tema": {
+    "primary": "#ff7a1a",
+    "secondary": "#252525",
+    "background": "#f3f2ef",
+    "surface": "#ffffff",
+    "text": "#222222",
+    "muted": "#66645f",
+    "accent": "#2f5b45",
+    "fontTitle": "Inter",
+    "fontBody": "Inter"
+  },
+  "logo": {
+    "arquivo": "logo.webp",
+    "contraste": "light"
+  },
+  "essencia": {
+    "titulo": "Decisões inteligentes desde o projeto.",
+    "texto": "O Cota 365 foi pensado para unir timing de mercado, soluções arquitetônicas inovadoras e uma rotina mais prática. Um produto bom para viver e forte para investir.",
+    "cards": [
+      "Smart = decisões inteligentes desde o projeto",
+      "Smart = soluções arquitetônicas inovadoras",
+      "Smart = timing de mercado perfeito",
+      "Smart = bom para viver e investir"
+    ]
+  },
+  "highlights": [
+    "01 torre com rooftop",
+    "175 unidades residenciais",
+    "1.500m² de área de lazer",
+    "4 lojas comerciais",
+    "3 elevadores",
+    "Conceito Smart 365"
+  ],
+  "amenities": [
+    "Coworking",
+    "Podcast 365",
+    "Café 365",
+    "Fitness 365",
+    "Fitness Sky",
+    "Zen 365",
+    "Sauna seca",
+    "Market 365",
+    "Delivery 365",
+    "Lavanderia 365",
+    "Praça 365",
+    "Pet Place",
+    "Smart Locker",
+    "Piscina adulto e infantil",
+    "Espaço Gourmet",
+    "Salão de Festas",
+    "Sport Bar",
+    "Sky Lounge"
+  ],
+  "apartmentFeatures": [
+    "Studios de aproximadamente 29m² a 30,50m²",
+    "Apartamentos de 2 dormitórios com 1 suíte",
+    "Apartamentos de 2 dormitórios com 2 suítes",
+    "Paredes duplas com isolamento acústico entre unidades",
+    "Fechadura eletrônica",
+    "Infraestrutura para automação"
+  ],
+  "tecnologia": {
+    "titulo": "Tecnologia, segurança e desempenho técnico no projeto.",
+    "itens": [
+      "Projeto desenvolvido integralmente em BIM",
+      "Controle de acesso por reconhecimento facial",
+      "Monitoramento 24 horas",
+      "Portões com leitura automática de placas",
+      "Paredes duplas com isolamento acústico",
+      "02 vagas para carro elétrico com 22kW de potência total"
+    ]
+  },
+  "spotlight": {
+    "titulo": "Rooftop com lazer para transformar o alto do prédio em rotina.",
+    "descricao": "Piscina adulto e infantil, Fitness 365, Fitness Sky, Zen 365, Sport Bar, sauna seca, gourmet, salão de festas, Sky Lounge, terraço descoberto e deck piscina.",
+    "itens": [
+      "Piscina adulto e infantil",
+      "Fitness 365 e Fitness Sky",
+      "Sport Bar e Sky Lounge",
+      "Espaço Gourmet e salão de festas"
+    ]
+  },
+  "plantas": [
+    {
+      "nome": "Final 04 Studio",
+      "area": "29,37m²",
+      "quartos": "Studio",
+      "suites": "não identificado",
+      "vagas": "opcional",
+      "imagem": "planta-final-04-studio.webp"
+    },
+    {
+      "nome": "Final 02",
+      "area": "72,48m²",
+      "quartos": "2",
+      "suites": "1",
+      "vagas": "1 vaga simples com hobby box",
+      "imagem": "planta-final-02.webp"
+    },
+    {
+      "nome": "Final 03",
+      "area": "69,08m²",
+      "quartos": "2",
+      "suites": "2",
+      "vagas": "vaga estendida com hobby box",
+      "imagem": "planta-final-03.webp"
+    },
+    {
+      "nome": "Final 16",
+      "area": "68,30m²",
+      "quartos": "2",
+      "suites": "1",
+      "vagas": "1 vaga simples com hobby box",
+      "imagem": "planta-final-16.webp"
+    }
+  ],
+  "galeria": [
+    {
+      "arquivo": "fachada-hero.webp",
+      "descricao": "Fachada do Cota 365",
+      "categoria": "Fachada",
+      "usoSugerido": "landing, carrossel, story"
+    },
+    {
+      "arquivo": "localizacao-aerea.webp",
+      "descricao": "Localização aérea do Cota 365",
+      "categoria": "Localização",
+      "usoSugerido": "post de localização, carrossel"
+    },
+    {
+      "arquivo": "hall.webp",
+      "descricao": "Hall do Cota 365",
+      "categoria": "Apartamento",
+      "usoSugerido": "post de experiência, story"
+    },
+    {
+      "arquivo": "lobby-cafe.webp",
+      "descricao": "Lobby 365 com Café 365",
+      "categoria": "Lazer",
+      "usoSugerido": "post de rotina, carrossel"
+    },
+    {
+      "arquivo": "praca-365.webp",
+      "descricao": "Praça 365",
+      "categoria": "Lazer",
+      "usoSugerido": "post de convivência"
+    },
+    {
+      "arquivo": "fitness-365.webp",
+      "descricao": "Fitness 365",
+      "categoria": "Lazer",
+      "usoSugerido": "post de bem-estar"
+    },
+    {
+      "arquivo": "sport-bar.webp",
+      "descricao": "Sport Bar",
+      "categoria": "Lazer",
+      "usoSugerido": "story, carrossel"
+    },
+    {
+      "arquivo": "espaco-gourmet.webp",
+      "descricao": "Espaço Gourmet com vista",
+      "categoria": "Lazer",
+      "usoSugerido": "post de desejo"
+    },
+    {
+      "arquivo": "salao-festas.webp",
+      "descricao": "Salão de Festas",
+      "categoria": "Lazer",
+      "usoSugerido": "carrossel"
+    },
+    {
+      "arquivo": "piscina-rooftop.webp",
+      "descricao": "Piscina adulto e infantil no rooftop",
+      "categoria": "Lazer",
+      "usoSugerido": "hero secundário, story"
+    }
+  ],
+  "publicoAlvo": {
+    "perfis": [
+      "investidores interessados em studios e unidades compactas",
+      "moradores da Região Continental que buscam conveniência",
+      "compradores de 2 dormitórios com foco em infraestrutura completa"
+    ],
+    "motivo": "O mix de unidades, a localização e a estrutura 365 dias atendem tanto uso residencial quanto tese de investimento."
+  },
+  "tomComunicacao": {
+    "tom": "Direto, urbano e inteligente",
+    "palavrasChave": [
+      "smart",
+      "365 dias",
+      "conveniência",
+      "investimento",
+      "Região Continental",
+      "pré-lançamento"
+    ]
+  },
+  "cta": {
+    "botaoPrincipal": "Receber apresentação",
+    "botaoSecundario": "Falar com consultor",
+    "mensagemWhatsapp": "Olá! Quero receber a apresentação, plantas e condições do pré-lançamento Cota 365."
+  },
+  "seo": {
+    "titulo": "Cota 365 | Pré-lançamento na Região Continental de Florianópolis",
+    "descricao": "Conheça o Cota 365, pré-lançamento smart na Rua Afonso Pena, Florianópolis, com studios, apartamentos de 2 dormitórios, lojas comerciais e 1.500m² de lazer."
+  }
+}

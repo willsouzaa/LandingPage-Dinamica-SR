@@ -1,7 +1,9 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { formatWhatsAppLink } from "@/lib/utils";
+import { ClientPortal } from "./ClientPortal";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -14,45 +16,82 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-export function FloatingWhatsApp() {
+type FloatingWhatsAppProps = {
+  whatsapp?: string;
+  whatsappMessage?: string;
+};
+
+export function FloatingWhatsApp({ whatsapp, whatsappMessage }: FloatingWhatsAppProps) {
   const [expanded, setExpanded] = useState(true);
+  const [hidden, setHidden] = useState(false);
+  const href = whatsapp
+    ? formatWhatsAppLink(whatsapp, whatsappMessage ?? "Olá! Quero receber mais informações.")
+    : "#cadastro";
 
   useEffect(() => {
     const timer = setTimeout(() => setExpanded(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const targets = ["#cadastro", "footer"]
+      .map((selector) => document.querySelector(selector))
+      .filter((target): target is Element => Boolean(target));
+
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setHidden(entries.some((entry) => entry.isIntersecting && entry.intersectionRatio > 0.1));
+      },
+      {
+        rootMargin: "0px 0px -12% 0px",
+        threshold: [0, 0.1, 0.25],
+      },
+    );
+
+    targets.forEach((target) => observer.observe(target));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="fixed bottom-6 right-5 z-50">
-      {/* Anel de pulso */}
-      <span className="pointer-events-none absolute inset-0 rounded-full bg-[var(--color-primary)] opacity-25 animate-ping" />
-
-      <motion.a
-        href="#cadastro"
-        aria-label="Receba o ebook em minutos"
-        onHoverStart={() => setExpanded(true)}
-        onHoverEnd={() => setExpanded(false)}
-        animate={{ width: expanded ? "auto" : "3.5rem" }}
-        transition={{ duration: 0.45, ease }}
-        className="relative flex h-14 items-center gap-3 overflow-hidden rounded-full bg-[var(--color-primary)] px-4 text-white shadow-[0_8px_32px_rgba(200,155,90,0.4)] ring-1 ring-white/20"
+    <ClientPortal>
+      <div
+        className={`fixed bottom-[calc(env(safe-area-inset-bottom)+1rem)] right-4 z-[70] transition duration-300 sm:bottom-6 sm:right-5 ${
+          hidden ? "pointer-events-none translate-y-5 opacity-0" : "translate-y-0 opacity-100"
+        }`}
       >
-        <WhatsAppIcon />
+        {/* Anel de pulso */}
+        <span className="pointer-events-none absolute inset-0 rounded-full bg-[var(--color-primary)] opacity-25 animate-ping" />
 
-        <AnimatePresence>
-          {expanded && (
-            <motion.span
-              key="label"
-              initial={{ opacity: 0, x: -6 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -6 }}
-              transition={{ duration: 0.25, ease }}
-              className="whitespace-nowrap pr-2 text-[11px] font-black uppercase tracking-[0.16em]"
-            >
-              Receba o ebook em minutos
-            </motion.span>
-          )}
-        </AnimatePresence>
-      </motion.a>
-    </div>
+        <motion.a
+          href={href}
+          aria-label="Receber catálogo do empreendimento"
+          onHoverStart={() => setExpanded(true)}
+          onHoverEnd={() => setExpanded(false)}
+          animate={{ width: expanded ? "13.25rem" : "3.5rem" }}
+          transition={{ duration: 0.45, ease }}
+          className="relative flex h-14 items-center gap-3 overflow-hidden rounded-full bg-[var(--color-primary)] px-4 text-white shadow-[0_10px_34px_rgba(0,0,0,0.28)] ring-1 ring-white/25"
+        >
+          <WhatsAppIcon />
+
+          <AnimatePresence>
+            {expanded && (
+              <motion.span
+                key="label"
+                initial={{ opacity: 0, x: -6 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -6 }}
+                transition={{ duration: 0.25, ease }}
+                className="hidden whitespace-nowrap pr-2 text-[11px] font-black uppercase tracking-[0.16em] sm:inline"
+              >
+                Receber catálogo
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.a>
+      </div>
+    </ClientPortal>
   );
 }

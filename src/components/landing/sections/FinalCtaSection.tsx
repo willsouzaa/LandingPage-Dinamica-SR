@@ -67,19 +67,17 @@ export function FinalCtaSection({ development }: FinalCtaSectionProps) {
           className="md:sticky md:top-24"
         >
           <p className="text-xs font-bold uppercase tracking-[0.32em] text-[var(--color-primary)]">
-            Cadastre-se
+            Catálogo e condições
           </p>
-          <h2 className="mt-5 font-serif text-[clamp(42px,8vw,92px)] font-black leading-[0.9]">
-            As condições
+          <h2 className="mt-5 font-serif text-[clamp(36px,6vw,76px)] font-black leading-[0.94]">
+            Receba plantas,
             <br />
-            de pré-lançamento
+            metragens e condições
             <br />
-            são limitadas
-            <br />
-            e exclusivas.
+            do {development.name}.
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-[var(--color-muted)]">
-            Garanta prioridade para receber informações, plantas e atualizações comerciais do {development.name}.
+            Fale com a San Remo para conferir disponibilidade, valores atualizados e detalhes comerciais direto no WhatsApp.
           </p>
         </motion.div>
 
@@ -145,7 +143,7 @@ export function FinalCtaSection({ development }: FinalCtaSectionProps) {
               value={formValues.message}
               onChange={(e) => updateField("message", e.target.value)}
               className="min-h-32 resize-none border border-[var(--color-text)]/15 bg-white px-4 py-3 outline-none transition focus:border-[var(--color-primary)]"
-              placeholder="Quero saber mais sobre as condições de pré-lançamento."
+              placeholder="Quero receber catálogo, plantas e condições comerciais."
             />
           </label>
 
@@ -154,8 +152,12 @@ export function FinalCtaSection({ development }: FinalCtaSectionProps) {
             disabled={pending}
             className="mt-2 bg-[var(--color-secondary)] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-[var(--color-primary)] disabled:opacity-60"
           >
-            {pending ? "Enviando..." : "Enviar cadastro"}
+            {pending ? "Enviando..." : "Receber catálogo no WhatsApp"}
           </button>
+
+          <p className="text-xs leading-relaxed text-[var(--color-muted)]">
+            Atendimento realizado por consultores da San Remo Imóveis. CRECI 9715-J.
+          </p>
 
           {state.message ? (
             <p className={state.ok ? "text-sm font-bold text-green-700" : "text-sm font-bold text-red-700"}>

@@ -5,7 +5,6 @@ import { Footer } from "../sections/Footer";
 import { HeroRenderer } from "../sections/heroes/HeroRenderer";
 import { LocationSection } from "../sections/LocationSection";
 import { ManifestoSection } from "../sections/ManifestoSection";
-import { GallerySection } from "../sections/GallerySection";
 import { SpotlightSection } from "../sections/SpotlightSection";
 import { TechnologySection } from "../sections/TechnologySection";
 import { StickyHeader } from "../ui/StickyHeader";

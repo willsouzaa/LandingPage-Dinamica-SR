@@ -16,9 +16,9 @@ type StickyHeaderProps = {
 
 const menuItems = [
   { label: "Início", href: "#hero" },
-  { label: "Manifesto", href: "#manifesto" },
+  { label: "Essência", href: "#essencia" },
   { label: "Empreendimento", href: "#building-reveal" },
-  { label: "Cadastro", href: "#cadastro" },
+  { label: "Catálogo", href: "#cadastro" },
 ];
 
 export function StickyHeader({

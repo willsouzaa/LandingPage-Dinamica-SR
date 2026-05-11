@@ -149,6 +149,238 @@ Cada empreendimento deve ter:
 
 ---
 
+## Fluxo de criação com IA no VS Code
+
+Além dos empreendimentos já cadastrados manualmente em `src/data/developments`, o projeto suporta um fluxo de criação assistida por IA feito diretamente no VS Code.
+
+O objetivo desse fluxo é permitir que a IA analise um PDF de catálogo/folder, imagens, briefing, extração textual ou dados comerciais e gere um **draft estruturado de landing page**, sem criar código React novo.
+
+Essa análise não deve acontecer por uma API do Studio. A IA deve trabalhar no VS Code com acesso ao repositório, aos arquivos do PDF/imagens e aos prompts. Isso facilita a leitura visual, a seleção de imagens, a nomeação de arquivos e reduz custo/fragilidade.
+
+### Arquitetura do fluxo
+
+```txt
+PDF/folder/briefing do empreendimento
+  ↓
+IA no VS Code usando prompts/criar-landing.md
+  ↓
+IA extrai dados, seleciona imagens e gera JSON com strategy + development
+  ↓
+IA cria src/data/developments/[slug]/dados.json com dados reutilizáveis
+  ↓
+IA executa npm run marketing [slug] para montar conteudo-marketing/[slug]/dados, imagens e marketing
+  ↓
+Validador confere campos obrigatórios, slug, CTA, cores e seções
+  ↓
+Draft salvo em conteudo-marketing/[slug]/landing/draft.json
+  ↓
+Preview em /studio/preview/[slug]
+  ↓
+Revisão humana antes da publicação definitiva
+  ↓
+API /api/studio/publicar-landing/[slug]
+  ↓
+Landing publicada em /empreendimento/[slug]
+```
+
+### Regra central
+
+A IA deve começar tentando resolver a landing com o motor existente. Ela deve trabalhar com:
+
+- Dados estruturados compatíveis com `Development`.
+- Dados reutilizáveis em `src/data/developments/[slug]/dados.json`.
+- Estrutura de marketing em `conteudo-marketing/[slug]/dados/`, `conteudo-marketing/[slug]/imagens/` e `conteudo-marketing/[slug]/marketing/`.
+- Templates existentes.
+- Variantes de hero existentes.
+- Seções existentes no registry dinâmico.
+- Seções customizadas em área controlada, quando houver justificativa comercial forte.
+- Copywriting comercial e estratégia de composição.
+
+### Arquivos principais
+
+```txt
+prompts/criar-landing.md
+src/types/development.ts
+src/types/development-draft.ts
+src/lib/landing-draft-validator.ts
+src/lib/landing-drafts.ts
+src/app/api/studio/publicar-landing/[slug]/route.ts
+src/app/studio/preview/[slug]/page.tsx
+src/components/landing/templates/DynamicSectionsTemplate.tsx
+src/components/landing/generated/registry.tsx
+```
+
+### Seções dinâmicas disponíveis
+
+O campo opcional `sections` no objeto `Development` permite que a IA escolha a ordem da landing.
+
+Valores permitidos:
+
+```txt
+hero
+essencia
+building
+location
+spotlight
+technology
+amenities
+gallery
+floorPlans
+leadForm
+footer
+```
+
+Também é possível usar seções customizadas no formato:
+
+```txt
+custom:nome-da-secao
+```
+
+Para funcionar, a seção precisa estar registrada em:
+
+```txt
+src/components/landing/generated/registry.tsx
+```
+
+Exemplo:
+
+```tsx
+import { InvestmentReturnSection } from "./parko-rtrees/InvestmentReturnSection";
+
+export const generatedSectionRegistry = {
+  "investment-return": InvestmentReturnSection,
+};
+```
+
+No draft:
+
+```json
+["hero", "essencia", "location", "custom:investment-return", "leadForm", "footer"]
+```
+
+Exemplo para campanha de lançamento:
+
+```json
+["hero", "essencia", "building", "location", "spotlight", "technology", "leadForm", "footer"]
+```
+
+Exemplo para página mais completa:
+
+```json
+["hero", "essencia", "building", "location", "amenities", "gallery", "floorPlans", "technology", "leadForm", "footer"]
+```
+
+Se `sections` não existir, o sistema continua usando o template tradicional definido em `template`, mantendo compatibilidade com landings já existentes.
+
+### Criação de novas seções pela IA
+
+A IA pode criar novo código em casos específicos, mas sempre dentro da pasta controlada:
+
+```txt
+src/components/landing/generated/[slug]/
+```
+
+Use esse recurso quando uma landing precisar de uma abordagem comercial melhor do que as seções padrão, por exemplo:
+
+- seção de retorno para investidores;
+- comparação de unidades/tipologias;
+- seção de prioridade de lançamento;
+- narrativa de localização com dados de proximidade;
+- assinatura arquitetônica;
+- wellness, praia, família ou alto padrão.
+
+Regras:
+
+- O componente deve receber `{ development }`.
+- Deve usar o tipo `Development`.
+- Deve usar Tailwind e CSS variables do tema.
+- Não deve alterar o motor central.
+- Não deve instalar dependências.
+- Deve ser registrado no `generatedSectionRegistry`.
+- O draft deve usar `custom:nome-da-chave`.
+- `npm run build` precisa passar antes de publicar.
+
+### Validação obrigatória
+
+Todo draft criado por IA precisa seguir o formato validável do sistema.
+
+O validador deve conferir:
+
+- `slug` em letras minúsculas, números e hífens.
+- `status`, `template`, `hero.variant` e `sections` dentro dos valores permitidos.
+- `cta.whatsapp` usando o número da San Remo: `5548988506977`.
+- Cores do tema em formato hexadecimal.
+- Campos obrigatórios de marca, hero, localização, CTA e SEO.
+- Quantidade mínima recomendada de imagens, highlights e diferenciais.
+
+### Como criar o draft no VS Code
+
+1. Extraia do PDF as imagens úteis para a landing e salve as imagens finais em:
+
+```txt
+public/empreendimentos/[slug]/catalogo/
+```
+
+As imagens devem incluir, quando existirem no PDF:
+
+- logo;
+- fachada principal;
+- imagem aérea/localização;
+- lazer;
+- interiores;
+- plantas;
+- diferenciais visuais usados em seções padrão ou customizadas.
+
+Use nomes sem acentos e sem espaços, preferencialmente `.webp`.
+
+2. Use `prompts/criar-landing.md` como instrução base para a IA.
+
+3. Peça para a IA gerar o arquivo:
+
+```txt
+conteudo-marketing/[slug]/landing/draft.json
+```
+
+4. Abra o preview:
+
+```txt
+/studio/preview/[slug]
+```
+
+Também é possível abrir o admin e clicar no card do draft:
+
+```txt
+/admin
+```
+
+O admin lista:
+
+- Landings cadastradas no projeto.
+- Drafts gerados pela IA para revisão.
+- Landings JSON já publicadas.
+
+5. Se aprovado, publique pelo botão do preview. Depois de publicada, a landing passa a aparecer no admin como `Publicada por IA` e abre direto em `/empreendimento/[slug]`.
+
+### Publicação
+
+O preview em `/studio/preview/[slug]` é uma etapa de revisão. Quando aprovado, o botão de publicação chama:
+
+```txt
+POST /api/studio/publicar-landing/[slug]
+```
+
+Esse endpoint copia o draft validado para:
+
+```txt
+conteudo-marketing/[slug]/landing/published.json
+```
+
+A rota pública `/empreendimento/[slug]` primeiro procura empreendimentos cadastrados em `src/data/developments`. Se não encontrar, procura uma landing publicada em JSON.
+
+Em uma evolução futura, esse mesmo conceito pode migrar para Supabase, substituindo os arquivos JSON por registros em banco.
+
+---
+
 ## Estilo visual desejado
 
 O estilo principal deve seguir a ideia de campanha premium imobiliária:

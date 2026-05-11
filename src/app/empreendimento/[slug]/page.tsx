@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDevelopmentBySlug, getDevelopmentSlugs } from "@/data/developments";
+import { getPublishedDevelopment } from "@/lib/landing-drafts";
 import { themeToStyle } from "@/lib/themes";
 import { LandingTemplateRenderer } from "@/components/landing/templates";
 
@@ -18,7 +19,7 @@ export async function generateMetadata({
   params,
 }: DevelopmentPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const development = getDevelopmentBySlug(slug);
+  const development = getDevelopmentBySlug(slug) ?? getPublishedDevelopment(slug);
 
   if (!development) {
     return {};
@@ -59,7 +60,7 @@ export async function generateMetadata({
 
 export default async function DevelopmentPage({ params }: DevelopmentPageProps) {
   const { slug } = await params;
-  const development = getDevelopmentBySlug(slug);
+  const development = getDevelopmentBySlug(slug) ?? getPublishedDevelopment(slug);
 
   if (!development) {
     notFound();

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { developments } from "@/data/developments";
+import { listDevelopmentDrafts } from "@/lib/landing-drafts";
 
 const statusLabel: Record<string, string> = {
   "pre-launch": "Pré-lançamento",
@@ -18,6 +19,8 @@ const statusColor: Record<string, string> = {
 };
 
 export default function StudioPage() {
+  const drafts = listDevelopmentDrafts();
+
   return (
     <div>
       <div className="mb-10">
@@ -28,6 +31,34 @@ export default function StudioPage() {
           Selecione um empreendimento para gerar roteiro e imagens de marketing.
         </p>
       </div>
+
+      {drafts.length > 0 ? (
+        <section className="mb-10">
+          <h2 className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+            Drafts gerados
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {drafts.map((draft) => (
+              <div
+                key={draft.development.slug}
+                className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-5"
+              >
+                <h3 className="font-semibold text-white">{draft.development.name}</h3>
+                <p className="mt-1 text-xs text-zinc-500">{draft.development.slug}</p>
+                <p className="mt-3 text-xs text-yellow-200">
+                  {draft.validation.warnings.length} atenção(ões) · {draft.development.sections?.length ?? 0} seções
+                </p>
+                <Link
+                  href={`/studio/preview/${draft.development.slug}`}
+                  className="mt-4 inline-flex rounded-lg bg-zinc-100 px-4 py-2 text-sm font-semibold text-zinc-950 transition hover:bg-white"
+                >
+                  Abrir preview →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {developments.map((dev) => (

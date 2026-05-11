@@ -34,6 +34,7 @@ export function ManifestoSection({ development }: { development: Development }) 
 
   const label = essencia.sectionLabel ?? "Essência";
   const ctaLabel = essencia.ctaLabel ?? cta.primaryLabel;
+  const cards = Array.isArray(essencia.cards) ? essencia.cards : [];
 
   return (
     <section
@@ -58,24 +59,26 @@ export function ManifestoSection({ development }: { development: Development }) 
           </Reveal>
         </div>
 
-        <div className="mb-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {essencia.cards.map((card, i) => (
-            <Reveal key={card} delay={i * 0.08}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.35, ease }}
-                className="flex flex-col gap-4 border border-[var(--color-secondary)]/10 bg-[var(--color-surface)] p-6"
-              >
-                <span className="flex size-10 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
-                  {CARD_ICONS[i % CARD_ICONS.length]}
-                </span>
-                <p className="text-sm font-bold leading-snug text-[var(--color-text)]">
-                  {card}
-                </p>
-              </motion.div>
-            </Reveal>
-          ))}
-        </div>
+        {cards.length > 0 ? (
+          <div className="mb-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {cards.map((card, i) => (
+              <Reveal key={card} delay={i * 0.08}>
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.35, ease }}
+                  className="flex flex-col gap-4 border border-[var(--color-secondary)]/10 bg-[var(--color-surface)] p-6"
+                >
+                  <span className="flex size-10 items-center justify-center rounded-full bg-[var(--color-primary)]/10">
+                    {CARD_ICONS[i % CARD_ICONS.length]}
+                  </span>
+                  <p className="text-sm font-bold leading-snug text-[var(--color-text)]">
+                    {card}
+                  </p>
+                </motion.div>
+              </Reveal>
+            ))}
+          </div>
+        ) : null}
 
         <Reveal delay={0.2}>
           <motion.a

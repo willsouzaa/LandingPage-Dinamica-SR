@@ -15,6 +15,23 @@ export type LandingTemplate =
   | "investment-value"
   | "catalogo";
 
+export type BuiltInLandingSectionType =
+  | "hero"
+  | "essencia"
+  | "building"
+  | "location"
+  | "spotlight"
+  | "technology"
+  | "amenities"
+  | "gallery"
+  | "floorPlans"
+  | "leadForm"
+  | "footer";
+
+export type CustomLandingSectionType = `custom:${string}`;
+
+export type LandingSectionType = BuiltInLandingSectionType | CustomLandingSectionType;
+
 export type HeroVariant =
   | "split-campaign"
   | "editorial-luxury"
@@ -40,6 +57,7 @@ export type FloorPlan = {
 export type Development = {
   slug: string;
   template: LandingTemplate;
+  sections?: LandingSectionType[];
   name: string;
   status: DevelopmentStatus;
   brand: {

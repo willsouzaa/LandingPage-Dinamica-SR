@@ -2,6 +2,7 @@ import type { Development } from "@/types/development";
 import { FloatingWhatsApp } from "../ui/FloatingWhatsApp";
 import { BeachLifestyleTemplate } from "./BeachLifestyleTemplate";
 import { CatalogoTemplate } from "./CatalogoTemplate";
+import { DynamicSectionsTemplate } from "./DynamicSectionsTemplate";
 import { InvestmentValueTemplate } from "./InvestmentValueTemplate";
 import { LaunchImpactTemplate } from "./LaunchImpactTemplate";
 import { LuxuryResidenceTemplate } from "./LuxuryResidenceTemplate";
@@ -14,6 +15,18 @@ type LandingTemplateRendererProps = {
 export function LandingTemplateRenderer({
   development,
 }: LandingTemplateRendererProps) {
+  if (development.sections?.length) {
+    return (
+      <>
+        <DynamicSectionsTemplate development={development} />
+        <FloatingWhatsApp
+          whatsapp={development.cta.whatsapp}
+          whatsappMessage={development.cta.message}
+        />
+      </>
+    );
+  }
+
   const templates = {
     "launch-impact": LaunchImpactTemplate,
     "luxury-residence": LuxuryResidenceTemplate,
@@ -27,7 +40,10 @@ export function LandingTemplateRenderer({
   return (
     <>
       <Template development={development} />
-      <FloatingWhatsApp />
+      <FloatingWhatsApp
+        whatsapp={development.cta.whatsapp}
+        whatsappMessage={development.cta.message}
+      />
     </>
   );
 }
